@@ -1,0 +1,415 @@
+﻿<svg 
+    xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66.34 33.17'>
+    <defs>
+        <style> .cls-1 { fill: #fff } .cls-2 { fill: #b11731 } </style>
+    </defs>
+    <g id='Layer_2' data-name='Layer 2'>
+        <g id='Layer_1-2' data-name='Layer 1'>
+            <path d='M0 0h66.34v33.17H0z' class='cls-1' />
+            <path id='stripe' d='M0 0h66.34v2.55H0z' class='cls-2' />
+            <path id='stripe-2' d='M0 5.1h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path id='stripe-3' d='M0 10.21h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path id='stripe-4' d='M0 15.31h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path id='stripe-5' d='M0 20.41h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path id='stripe-6' d='M0 25.51h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path id='stripe-7' d='M0 30.62h66.34v2.55H0z' class='cls-2' data-name='stripe' />
+            <path fill='#22325f' d='M0 0h25.21v17.86H0z' />
+            <g id='_Group_' data-name='Group'>
+                <g id='star'>
+                    <path id='pt' d='M2.42 1.96l-.87.63.34-1.02.53.39z' class='cls-1' />
+                    <path id='pt-2' d='M2.05 2.08l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-3' d='M1.82 1.77L2.16.74l.33 1.03h-.67z' class='cls-1' data-name='pt' />
+                    <path id='pt-4' d='M2.05 1.45h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-5' d='M2.42 1.57l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                </g>
+                <g id='star-2' data-name='star'>
+                    <path id='pt-6' d='M6.6 1.96l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                    <path id='pt-7' d='M6.23 2.08l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-8' d='M6 1.77L6.33.74l.34 1.03H6z' class='cls-1' data-name='pt' />
+                    <path id='pt-9' d='M6.23 1.45h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-10' d='M6.6 1.57l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                </g>
+                <g id='star-3' data-name='star'>
+                    <path id='pt-11' d='M10.78 1.96l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                    <path id='pt-12' d='M10.41 2.08l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-13' d='M10.18 1.77l.33-1.03.34 1.03h-.67z' class='cls-1' data-name='pt' />
+                    <path id='pt-14' d='M10.41 1.45h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-15' d='M10.78 1.57l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                </g>
+                <g id='star-4' data-name='star'>
+                    <path id='pt-16' d='M14.96 1.96l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                    <path id='pt-17' d='M14.59 2.08l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-18' d='M14.36 1.77l.33-1.03.34 1.03h-.67z' class='cls-1' data-name='pt' />
+                    <path id='pt-19' d='M14.59 1.45h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                    <path id='pt-20' d='M14.96 1.57l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                </g>
+                <g id='s5'>
+                    <g id='star-5' data-name='star'>
+                        <path id='pt-21' d='M19.14 1.96l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-22' d='M18.77 2.08l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-23' d='M18.54 1.77l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-24' d='M18.77 1.45h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-25' d='M19.14 1.57l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                </g>
+                <g id='s6'>
+                    <g id='star-6' data-name='star'>
+                        <path id='pt-26' d='M23.32 1.96l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-27' d='M22.95 2.08l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-28' d='M22.72 1.77l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-29' d='M22.95 1.45h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-30' d='M23.32 1.57l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                </g>
+                <g id='_star_b2_' data-name='star b2'>
+                    <g id='star-7' data-name='star'>
+                        <path id='pt-31' d='M4.51 3.75l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-32' d='M4.14 3.87l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-33' d='M3.91 3.56l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-34' d='M4.14 3.24h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-35' d='M4.51 3.36l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-8' data-name='star'>
+                        <path id='pt-36' d='M8.69 3.75l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-37' d='M8.32 3.87l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-38' d='M8.09 3.56l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-39' d='M8.32 3.24H9.4l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-40' d='M8.69 3.36l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-9' data-name='star'>
+                        <path id='pt-41' d='M12.87 3.75l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-42' d='M12.5 3.87l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-43' d='M12.27 3.56l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-44' d='M12.5 3.24h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-45' d='M12.87 3.36l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-10' data-name='star'>
+                        <path id='pt-46' d='M17.05 3.75l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-47' d='M16.68 3.87l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-48' d='M16.45 3.56l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-49' d='M16.68 3.24h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-50' d='M17.05 3.36l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-2' data-name='s5'>
+                        <g id='star-11' data-name='star'>
+                            <path id='pt-51' d='M21.23 3.75l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-52' d='M20.86 3.87l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-53' d='M20.63 3.56l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-54' d='M20.86 3.24h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-55' d='M21.23 3.36l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b3_' data-name='star b3'>
+                    <g id='star-12' data-name='star'>
+                        <path id='pt-56' d='M2.42 5.54l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-57' d='M2.05 5.66l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-58' d='M1.82 5.35l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-59' d='M2.05 5.03h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-60' d='M2.42 5.15l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-13' data-name='star'>
+                        <path id='pt-61' d='M6.6 5.54l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-62' d='M6.23 5.66l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-63' d='M6 5.35l.33-1.02.34 1.02H6z' class='cls-1' data-name='pt' />
+                        <path id='pt-64' d='M6.23 5.03h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-65' d='M6.6 5.15l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-14' data-name='star'>
+                        <path id='pt-66' d='M10.78 5.54l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-67' d='M10.41 5.66l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-68' d='M10.18 5.35l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-69' d='M10.41 5.03h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-70' d='M10.78 5.15l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-15' data-name='star'>
+                        <path id='pt-71' d='M14.96 5.54l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-72' d='M14.59 5.66l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-73' d='M14.36 5.35l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-74' d='M14.59 5.03h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-75' d='M14.96 5.15l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-3' data-name='s5'>
+                        <g id='star-16' data-name='star'>
+                            <path id='pt-76' d='M19.14 5.54l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-77' d='M18.77 5.66l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-78' d='M18.54 5.35l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-79' d='M18.77 5.03h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-80' d='M19.14 5.15l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                    <g id='s6-2' data-name='s6'>
+                        <g id='star-17' data-name='star'>
+                            <path id='pt-81' d='M23.32 5.54l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-82' d='M22.95 5.66l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-83' d='M22.72 5.35l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-84' d='M22.95 5.03h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-85' d='M23.32 5.15l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b4_' data-name='star b4'>
+                    <g id='star-23' data-name='star'>
+                        <path id='pt-86' d='M4.57 7.34l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-87' d='M4.19 7.46l-.86-.63H4.4l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-88' d='M3.96 7.14l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-89' d='M4.19 6.83h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-90' d='M4.57 6.95l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-24' data-name='star'>
+                        <path id='pt-91' d='M8.74 7.34l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-92' d='M8.37 7.46l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-93' d='M8.14 7.14l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-94' d='M8.37 6.83h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-95' d='M8.74 6.95l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-25' data-name='star'>
+                        <path id='pt-96' d='M12.92 7.34l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-97' d='M12.55 7.46l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-98' d='M12.32 7.14l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-99' d='M12.55 6.83h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-100' d='M12.92 6.95l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-26' data-name='star'>
+                        <path id='pt-101' d='M17.1 7.34l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-102' d='M16.73 7.46l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-103' d='M16.5 7.14l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-104' d='M16.73 6.83h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-105' d='M17.1 6.95l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-6' data-name='s5'>
+                        <g id='star-27' data-name='star'>
+                            <path id='pt-106' d='M21.28 7.34l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-107' d='M20.91 7.46l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-108' d='M20.68 7.14l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-109' d='M20.91 6.83h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-110' d='M21.28 6.95l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b3_2' data-name='star b3'>
+                    <g id='star-28' data-name='star'>
+                        <path id='pt-111' d='M2.49 9.12l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-112' d='M2.12 9.24l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-113' d='M1.89 8.92l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-114' d='M2.12 8.61h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-115' d='M2.49 8.73l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-29' data-name='star'>
+                        <path id='pt-116' d='M6.67 9.12l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-117' d='M6.3 9.24l-.87-.63H6.5l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-118' d='M6.07 8.92L6.4 7.9l.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-119' d='M6.3 8.61h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-120' d='M6.67 8.73L7 9.75l-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-30' data-name='star'>
+                        <path id='pt-121' d='M10.85 9.12l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-122' d='M10.47 9.24l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-123' d='M10.25 8.92l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-124' d='M10.47 8.61h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-125' d='M10.85 8.73l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-31' data-name='star'>
+                        <path id='pt-126' d='M15.03 9.12l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-127' d='M14.65 9.24l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-128' d='M14.43 8.92l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-129' d='M14.65 8.61h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-130' d='M15.03 8.73l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-7' data-name='s5'>
+                        <g id='star-32' data-name='star'>
+                            <path id='pt-131' d='M19.2 9.12l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-132' d='M18.83 9.24l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-133' d='M18.6 8.92l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-134' d='M18.83 8.61h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-135' d='M19.2 8.73l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                    <g id='s6-6' data-name='s6'>
+                        <g id='star-33' data-name='star'>
+                            <path id='pt-136' d='M23.38 9.12l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-137' d='M23.01 9.24l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-138' d='M22.78 8.92l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-139' d='M23.01 8.61h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-140' d='M23.38 8.73l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b4_2' data-name='star b4'>
+                    <g id='star-39' data-name='star'>
+                        <path id='pt-141' d='M4.58 10.86l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-142' d='M4.21 10.98l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-143' d='M3.98 10.67l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-144' d='M4.21 10.35h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-145' d='M4.58 10.47l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-40' data-name='star'>
+                        <path id='pt-146' d='M8.76 10.86l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-147' d='M8.39 10.98l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-148' d='M8.16 10.67l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-149' d='M8.39 10.35h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-150' d='M8.76 10.47l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-41' data-name='star'>
+                        <path id='pt-151' d='M12.94 10.86l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-152' d='M12.56 10.98l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-153' d='M12.34 10.67l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-154' d='M12.56 10.35h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-155' d='M12.94 10.47l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-42' data-name='star'>
+                        <path id='pt-156' d='M17.11 10.86l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-157' d='M16.74 10.98l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-158' d='M16.52 10.67l.33-1.03.33 1.03h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-159' d='M16.74 10.35h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-160' d='M17.11 10.47l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-10' data-name='s5'>
+                        <g id='star-43' data-name='star'>
+                            <path id='pt-161' d='M21.29 10.86l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-162' d='M20.92 10.98l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-163' d='M20.69 10.67l.34-1.03.33 1.03h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-164' d='M20.92 10.35H22l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-165' d='M21.29 10.47l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b3_3' data-name='star b3'>
+                    <g id='star-44' data-name='star'>
+                        <path id='pt-166' d='M2.53 12.64l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-167' d='M2.16 12.76l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-168' d='M1.93 12.45l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-169' d='M2.16 12.13h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-170' d='M2.53 12.25l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-45' data-name='star'>
+                        <path id='pt-171' d='M6.71 12.64l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-172' d='M6.33 12.76l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-173' d='M6.11 12.45l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-174' d='M6.33 12.13h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-175' d='M6.71 12.25l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-46' data-name='star'>
+                        <path id='pt-176' d='M10.88 12.64l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-177' d='M10.51 12.76l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-178' d='M10.29 12.45l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-179' d='M10.51 12.13h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-180' d='M10.88 12.25l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-47' data-name='star'>
+                        <path id='pt-181' d='M15.06 12.64l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-182' d='M14.69 12.76l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-183' d='M14.46 12.45l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-184' d='M14.69 12.13h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-185' d='M15.06 12.25l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-11' data-name='s5'>
+                        <g id='star-48' data-name='star'>
+                            <path id='pt-186' d='M19.24 12.64l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-187' d='M18.87 12.76l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-188' d='M18.64 12.45l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-189' d='M18.87 12.13h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-190' d='M19.24 12.25l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                    <g id='s6-10' data-name='s6'>
+                        <g id='star-49' data-name='star'>
+                            <path id='pt-191' d='M23.42 12.64l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-192' d='M23.05 12.76l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-193' d='M22.82 12.45l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-194' d='M23.05 12.13h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-195' d='M23.42 12.25l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b4_3' data-name='star b4'>
+                    <g id='star-55' data-name='star'>
+                        <path id='pt-196' d='M4.57 14.42l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-197' d='M4.19 14.54l-.86-.63H4.4l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-198' d='M3.96 14.23l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-199' d='M4.19 13.91h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-200' d='M4.57 14.03l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-56' data-name='star'>
+                        <path id='pt-201' d='M8.74 14.42l-.86.63.33-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-202' d='M8.37 14.54l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-203' d='M8.14 14.23l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-204' d='M8.37 13.91h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-205' d='M8.74 14.03l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-57' data-name='star'>
+                        <path id='pt-206' d='M12.92 14.42l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-207' d='M12.55 14.54l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-208' d='M12.32 14.23l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-209' d='M12.55 13.91h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-210' d='M12.92 14.03l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-58' data-name='star'>
+                        <path id='pt-211' d='M17.1 14.42l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-212' d='M16.73 14.54l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-213' d='M16.5 14.23l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-214' d='M16.73 13.91h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-215' d='M17.1 14.03l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-14' data-name='s5'>
+                        <g id='star-59' data-name='star'>
+                            <path id='pt-216' d='M21.28 14.42l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-217' d='M20.91 14.54l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-218' d='M20.68 14.23l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-219' d='M20.91 13.91h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-220' d='M21.28 14.03l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+                <g id='_star_b3_4' data-name='star b3'>
+                    <g id='star-60' data-name='star'>
+                        <path id='pt-221' d='M2.48 16.21l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-222' d='M2.1 16.33l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-223' d='M1.88 16.01l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                        <path id='pt-224' d='M2.1 15.7h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-225' d='M2.48 15.82l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-61' data-name='star'>
+                        <path id='pt-226' d='M6.66 16.21l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-227' d='M6.28 16.33l-.86-.63h1.07l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-228' d='M6.05 16.01l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-229' d='M6.28 15.7h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-230' d='M6.66 15.82l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-62' data-name='star'>
+                        <path id='pt-231' d='M10.83 16.21l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-232' d='M10.46 16.33l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-233' d='M10.23 16.01l.34-1.02.33 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-234' d='M10.46 15.7h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-235' d='M10.83 15.82l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='star-63' data-name='star'>
+                        <path id='pt-236' d='M15.01 16.21l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                        <path id='pt-237' d='M14.64 16.33l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-238' d='M14.41 16.01l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                        <path id='pt-239' d='M14.64 15.7h1.08l-.87.63-.21-.63z' class='cls-1' data-name='pt' />
+                        <path id='pt-240' d='M15.01 15.82l.34 1.02-.87-.63.53-.39z' class='cls-1' data-name='pt' />
+                    </g>
+                    <g id='s5-15' data-name='s5'>
+                        <g id='star-64' data-name='star'>
+                            <path id='pt-241' d='M19.19 16.21l-.87.63.34-1.02.53.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-242' d='M18.82 16.33l-.87-.63h1.08l-.21.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-243' d='M18.59 16.01l.33-1.02.34 1.02h-.67z' class='cls-1' data-name='pt' />
+                            <path id='pt-244' d='M18.82 15.7h1.07l-.86.63-.21-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-245' d='M19.19 15.82l.33 1.02-.86-.63.53-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                    <g id='s6-14' data-name='s6'>
+                        <g id='star-65' data-name='star'>
+                            <path id='pt-246' d='M23.37 16.21l-.87.63.33-1.02.54.39z' class='cls-1' data-name='pt' />
+                            <path id='pt-247' d='M23 16.33l-.87-.63h1.07l-.2.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-248' d='M22.77 16.01l.33-1.02.33 1.02h-.66z' class='cls-1' data-name='pt' />
+                            <path id='pt-249' d='M23 15.7h1.07l-.87.63-.2-.63z' class='cls-1' data-name='pt' />
+                            <path id='pt-250' d='M23.37 15.82l.33 1.02-.87-.63.54-.39z' class='cls-1' data-name='pt' />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
