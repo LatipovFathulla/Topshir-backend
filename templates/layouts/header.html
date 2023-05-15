@@ -27,15 +27,15 @@
       <nav class="mainmenu mobile-menu">
         <ul>
           <li>
-            <a href="/pages/about-into.html">About INTO</a>
+            <a href="{% url 'pages:about' %}">About INTO</a>
             <ul class="dropdown">
-              <li><a href="/pages/success-with.html">Success with INTO</a></li>
+              <li><a href="{% url 'pages:success' %}">Success with INTO</a></li>
               <li><a href="/pages/blog.html">Blog</a></li>
-              <li><a href="/pages/faq.html">FAQ</a></li>
+              <li><a href="{% url 'pages:FAQ' %}">FAQ</a></li>
             </ul>
           </li>
           <li>
-            <a href="/pages/study-abroad.htmlli">Study Abroad</a>
+            <a href="{% url 'pages:study-abroad' %}">Study Abroad</a>
             <ul class="dropdown">
               <li><a href="/pages/uk.html">UK</a></li>
               <li><a href="/pages/us.html">US</a></li>
@@ -45,22 +45,22 @@
             </ul>
           </li>
           <li>
-            <a href="/pages/study-programs.html">Study Programs</a>
+            <a href="{% url 'pages:study-programs' %}">Study Programs</a>
             <ul class="dropdown">
-              <li><a href="/pages/choice-page.html">Choice</a></li>
+              <li><a href="{% url 'pages:choice-into' %}">Choice</a></li>
             </ul>
           </li>
           <li><a href="/pages/universities.html">Universities</a></li>
           <li>
-            <a href="/pages/admissions.html">Admissions</a>
-            <ul class="dropdown">
-              <li><a href="#">Fees</a></li>
-              <li><a href="#">Scholarships</a></li>
-              <li><a href="#">Visa pre-arrival service</a></li>
-            </ul>
+            <a href="{% url 'pages:admissions' %}">Admissions</a>
+<!--            <ul class="dropdown">-->
+<!--              <li><a href="#">Fees</a></li>-->
+<!--              <li><a href="#">Scholarships</a></li>-->
+<!--              <li><a href="#">Visa pre-arrival service</a></li>-->
+<!--            </ul>-->
           </li>
           <li>
-            <a href="/pages/contact.html">Contact</a>
+            <a href="{% url 'pages:contacts' %}">Contact</a>
           </li>
         </ul>
       </nav>
@@ -118,7 +118,7 @@
           <div class="row">
             <div class="col-lg-2">
               <div class="logo">
-                <a href="./index.html">
+                <a href="{% url 'pages:home' %}">
                   <img src="{% static 'img/topshir.png' %}" alt="" />
                 </a>
               </div>
@@ -128,15 +128,15 @@
                 <nav class="mainmenu">
                   <ul>
                     <li>
-                      <a href="/pages/about-into.html">About INTO</a>
+                      <a href="{% url 'pages:about' %}">About INTO</a>
                       <ul class="dropdown">
-                        <li><a href="/pages/success-with.html">Success with INTO</a></li>
+                        <li><a href="{% url 'pages:success' %}">Success with INTO</a></li>
                         <li><a href="/pages/blog.html">Blog</a></li>
-                        <li><a href="/pages/faq.html">FAQ</a></li>
+                        <li><a href="{% url 'pages:FAQ' %}">FAQ</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="/pages/study-abroad.html">Study Abroad</a>
+                      <a href="{% url 'pages:study-abroad' %}">Study Abroad</a>
                       <ul class="dropdown">
                         <li><a href="/pages/uk.html">UK</a></li>
                         <li><a href="/pages/us.html">US</a></li>
@@ -146,22 +146,22 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="/pages/study-programs.html">Study Programs</a>
+                      <a href="{% url 'pages:study-programs' %}">Study Programs</a>
                       <ul class="dropdown">
-                        <li><a href="/pages/choice-page.html">Choice</a></li>
+                        <li><a href="{% url 'pages:choice-into' %}">Choice</a></li>
                       </ul>
                     </li>
                     <li><a href="/pages/universities.html">Universities</a></li>
                     <li>
-                      <a href="/pages/admissions.html">Admissions</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Fees</a></li>
-                        <li><a href="#">Scholarships</a></li>
-                        <li><a href="#">Visa pre-arrival service</a></li>
-                      </ul>
+                      <a href="{% url 'pages:admissions' %}">Admissions</a>
+<!--                      <ul class="dropdown">-->
+<!--                        <li><a href="#">Fees</a></li>-->
+<!--                        <li><a href="#">Scholarships</a></li>-->
+<!--                        <li><a href="#">Visa pre-arrival service</a></li>-->
+<!--                      </ul>-->
                     </li>
                     <li>
-                      <a href="/pages/contact.html">Contact</a>
+                      <a href="{% url 'pages:contacts' %}">Contact</a>
                     </li>
                   </ul>
                 </nav>
