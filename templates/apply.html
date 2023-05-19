@@ -1,614 +1,316 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-    <!-- filter opening bar mobile menu -->
-    <div id="myNav" class="mobile-search-bar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <div class="overlay-content">
+<!-- filter opening bar mobile menu -->
+<div id="myNav" class="mobile-search-bar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+    >&times;</a
+    >
+    <div class="overlay-content">
         <div class="search-filters-desktop">
-          <h4 class="filter-class">Filter by</h4>
-          <hr>
-          <h4 class="filter-class">Country</h4>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="us"
-              name="US"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label class="" for="us"><span class=""> US</span></label>
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="uk"
-              name="UK"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label class="" for="uk"><span class=""> UK</span></label>
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="australia"
-              name="Australia"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label class="" for="australia"
-              ><span class=""> Australia</span></label
-            >
-          </div>
-          <h4 class="filter-class">Study Level</h4>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="a-level"
-              name="A-Level"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-            "
-              for="a-level"
-              ><span class=""> A-Level</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="english-language"
-              name="English Language"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-              "
-              for="english-language"
-              ><span class=""> English Language</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="graduate"
-              name="Graduate"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                "
-              for="graduate"
-              ><span class=""> Graduate</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="transfer"
-              name="Transfer"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                  "
-              for="transfer"
-              ><span class=""> Transfer</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="undergraduate"
-              name="Undergraduate"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                    "
-              for="undergraduate"
-              ><span class=""> Undergraduate</span></label
-            >
-          </div>
-          <h4 class="filter-class">University</h4>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="city-university-of-london"
-              name="City University of London"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                      "
-              for="city-university-of-london"
-              ><span class=""> City University of London</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="into-manchester"
-              name="INTO Manchester"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                        "
-              for="into-manchester"
-              ><span class=""> INTO Manchester</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="into-manchester-in-partnership-with-the-university"
-              name="INTO Manchester in partnership with The University"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                          "
-              for="into-manchester-in-partnership-with-the-university"
-              ><span class=""> INTO Manchester in partnership</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="into-stirling-sec"
-              name="INTO Stirling SEC"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                            "
-              for="into-stirling-sec"
-              ><span class=""> INTO Stirling SEC</span></label
-            >
-          </div>
-          <div class="class-check-country">
-            <input
-              type="checkbox"
-              id="london-world-education-centre"
-              name="London World Education Centre"
-              class="veZkDyGGdKWHe9huiusC"
-            /><label
-              class="
-                              "
-              for="london-world-education-centre"
-              ><span class=""> London World Education Centre</span></label
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- About Main section -->
-    <div class="body-container" id="apply-container">
-      <div class="row">
-        <div class="col-lg-3 pt-2">
-          <div id="left-sidebar">
             <h4 class="filter-class">Filter by</h4>
-            <hr />
-          </div>
-          <div class="search-filters-desktop">
+            <hr>
             <h4 class="filter-class">Country</h4>
+            {% for country in country %}
+            {{ country }}
+            {% endfor %}
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="us"
-                name="US"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label class="" for="us"><span class=""> US</span></label>
-            </div>
-            <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="uk"
-                name="UK"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label class="" for="uk"><span class=""> UK</span></label>
-            </div>
-            <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="australia"
-                name="Australia"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label class="" for="australia"
-                ><span class=""> Australia</span></label
-              >
+                <input
+                        type="checkbox"
+                        id="us"
+                        name="US"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label class="" for="us"><span class=""> US</span></label>
             </div>
             <h4 class="filter-class">Study Level</h4>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="a-level"
-                name="A-Level"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="a-level"
+                        name="A-Level"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
+            "
+                    for="a-level"
+            ><span class=""> A-Level</span></label
+            >
+            </div>
+            <div class="class-check-country">
+                <input
+                        type="checkbox"
+                        id="english-language"
+                        name="English Language"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
               "
-                for="a-level"
-                ><span class=""> A-Level</span></label
-              >
+                    for="english-language"
+            ><span class=""> English Language</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="english-language"
-                name="English Language"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="graduate"
+                        name="Graduate"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                 "
-                for="english-language"
-                ><span class=""> English Language</span></label
-              >
+                    for="graduate"
+            ><span class=""> Graduate</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="graduate"
-                name="Graduate"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="transfer"
+                        name="Transfer"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                   "
-                for="graduate"
-                ><span class=""> Graduate</span></label
-              >
+                    for="transfer"
+            ><span class=""> Transfer</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="transfer"
-                name="Transfer"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="undergraduate"
+                        name="Undergraduate"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                     "
-                for="transfer"
-                ><span class=""> Transfer</span></label
-              >
-            </div>
-            <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="undergraduate"
-                name="Undergraduate"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
-                      "
-                for="undergraduate"
-                ><span class=""> Undergraduate</span></label
-              >
+                    for="undergraduate"
+            ><span class=""> Undergraduate</span></label
+            >
             </div>
             <h4 class="filter-class">University</h4>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="city-university-of-london"
-                name="City University of London"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="city-university-of-london"
+                        name="City University of London"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
+                      "
+                    for="city-university-of-london"
+            ><span class=""> City University of London</span></label
+            >
+            </div>
+            <div class="class-check-country">
+                <input
+                        type="checkbox"
+                        id="into-manchester"
+                        name="INTO Manchester"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                         "
-                for="city-university-of-london"
-                ><span class=""> City University of London</span></label
-              >
+                    for="into-manchester"
+            ><span class=""> INTO Manchester</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="into-manchester"
-                name="INTO Manchester"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="into-manchester-in-partnership-with-the-university"
+                        name="INTO Manchester in partnership with The University"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                           "
-                for="into-manchester"
-                ><span class=""> INTO Manchester</span></label
-              >
+                    for="into-manchester-in-partnership-with-the-university"
+            ><span class=""> INTO Manchester in partnership</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="into-manchester-in-partnership-with-the-university"
-                name="INTO Manchester in partnership with The University"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="into-stirling-sec"
+                        name="INTO Stirling SEC"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                             "
-                for="into-manchester-in-partnership-with-the-university"
-                ><span class=""> INTO Manchester in partnership</span></label
-              >
+                    for="into-stirling-sec"
+            ><span class=""> INTO Stirling SEC</span></label
+            >
             </div>
             <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="into-stirling-sec"
-                name="INTO Stirling SEC"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
+                <input
+                        type="checkbox"
+                        id="london-world-education-centre"
+                        name="London World Education Centre"
+                        class="veZkDyGGdKWHe9huiusC"
+                /><label
+                    class="
                               "
-                for="into-stirling-sec"
-                ><span class=""> INTO Stirling SEC</span></label
-              >
+                    for="london-world-education-centre"
+            ><span class=""> London World Education Centre</span></label
+            >
             </div>
-            <div class="class-check-country">
-              <input
-                type="checkbox"
-                id="london-world-education-centre"
-                name="London World Education Centre"
-                class="veZkDyGGdKWHe9huiusC"
-              /><label
-                class="
-                                "
-                for="london-world-education-centre"
-                ><span class=""> London World Education Centre</span></label
-              >
+        </div>
+    </div>
+</div>
+
+<!-- About Main section -->
+<div class="body-container" id="apply-container">
+    <div class="row">
+        <div class="col-lg-3 pt-2">
+            <div id="left-sidebar">
+                <h4 class="filter-class">Filter by</h4>
+                <hr/>
             </div>
-          </div>
+            <div class="search-filters-desktop">
+                <h4 class="filter-class">Country</h4>
+                {% for country in country %}
+                 <div class="class-check-country" onclick="addUrlParameter('country', '{{ country.pk }}')" >
+                    <input
+                      type="checkbox"
+                      id="{{ country.pk }}"
+                      name="{{ country }}"
+                      {% if request.GET.country == country.pk|stringformat:'i' %}checked{% endif %}
+
+                    /><label class="" for="{{ country.pk }}"><span class=""> {{ country }}</span></label>
+                  </div>
+                {% endfor %}
+                <h4 class="filter-class">Study Level</h4>
+                {% for level in level %}
+                    <div class="class-check-country" onclick="addUrlParameter('level', '{{ level.pk }}')">
+                        <input  type="checkbox"
+                                id="{{ level.pk}}"
+                                name="{{ level }}"
+                                {% if request.GET.level == level.pk|stringformat:'i' %}checked{% endif %}
+                                />
+                        <label class="" for="{{ level.pk }}"><span class="">{{ level }}</span></label>
+                    </div>
+                {% endfor %}
+                <h4 class="filter-class">University</h4>
+                {% for admission in admission %}
+                <div class="class-check-country" onclick="addUrlParameter('admission', '{{ admission.pk }}')">
+                    <input
+                            type="checkbox"
+                            id="{{ admission.pk }}"
+                            name="{{ admission }}"
+                            {% if request.GET.admission == admission.pk|stringformat:'i' %}checked{% endif %}
+                    /><label
+                        class=""
+                        for="city-university-of-london"
+                ><span class="">{{ admission }}</span></label
+                >
+                </div>
+                {% endfor %}
+            </div>
+            <a href="/university/apply" style="">Clean filter</a>
         </div>
         <div class="col-lg-9">
-          <div class="search-bar-header">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="What do you want to study?"
-                aria-label="Recipient's username with two button addons"
-              />
-              <button class="button-search" id="" type="button">Search</button>
+            <div class="search-bar-header">
+                <div class="input-group">
+                    <form>
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="q"
+                                value="{{ request.GET.q }}"
+                                placeholder="What do you want to study?"
+                                aria-label="Recipient's username with two button addons">
+                        <button class="button-search" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <button class="button-filter-sort">
+            <button class="button-filter-sort">
             <span
-            style="font-size: 30px; cursor: pointer"
-            class="open-filter-bar"
-            onclick="openNav()"
-            >Filter by <img src="https://search.intostudy.com/next-assets/icons/caret-circle-down-regular.svg" style="width: 25px; height: 25px;" alt="Filter by">
+                    style="font-size: 30px; cursor: pointer"
+                    class="open-filter-bar"
+                    onclick="openNav()"
+            >Filter by <img src="https://search.intostudy.com/next-assets/icons/caret-circle-down-regular.svg"
+                            style="width: 25px; height: 25px;" alt="Filter by">
           </span>
-          </button>
-          <div class="result-sort-bar">
-            <h4 class="filter-class">4047 results</h4>
-            <label for="select" style="display: flex" id="sorting-filter">
-              <span>Sort</span>
-              <div class="select-wrapper">
-                <select
-                  id="sort-by"
-                  class="ge85u3qeOxeHi8G9Osw8"
-                  aria-label="Sort by"
-                >
-                  <option value="1" label="Best Match" selected="">
-                    Best Match
-                  </option>
-                  <option value="2" label="University A - Z">
-                    University A - Z
-                  </option>
-                  <option value="3" label="University Z - A">
-                    University Z - A
-                  </option>
-                </select>
-              </div>
-            </label>
-          </div>
-          <!-- search results bar -->
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
+            </button>
+            <div class="result-sort-bar">
+                <h4 class="filter-class">{{ universities|length }} results</h4>
+                <label for="select" style="display: flex" id="sorting-filter">
+                    <span>Sort</span>
+                  <div class="select-wrapper">
+                        <select id="sort-by" onchange="addUrlParameter('sort', this.value)">
+                            <option value="asc" {% if request.GET.sort == 'asc' %}selected{% endif %}>Sort Ascending</option>
+                            <option value="desc" {% if request.GET.sort == 'desc' %}selected{% endif %}>Sort Descending</option>
+                        </select>
+                    </div>
+                </label>
             </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="/pages/application-program.html"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
+            <!-- search results bar -->
+            {% for university in universities %}
+            <div class="search-results-row-result">
+                <div class="university-logo-search">
+                    <a href="#" class="uni-logo-link">
+                        <img
+                                src="{{ university.logo.url}}"
+                                style="width: 100px; height: 100px"
+                                alt="{{ university.title }}"
+                        />
+                    </a>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
-            </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="https://apply.intostudy.com/application/course/aCI3A000000CabxWAC"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
+                <div class="search-results-facultety-row">
+                    <div class="top-content-facultety-row">
+                        <h4 class="main-program-name-result">
+                            {{ university.title }}
+                        </h4>
+                        <h5 class="text-university-place">
+                            <a href="#">{{ university.country }}</a>
+                        </h5>
+                    </div>
+                    <div class="bottom-content-option-program">
+                        <h3 class="option-program-name">
+                            <a href="#">{{ university.admission }}</a>
+                        </h3>
+                        <div class="link-for-apply-path">
+                            <a
+                                    id="international-foundation-in-humanities-and-law"
+                                    href="/pages/application-program.html"
+                                    target="_blank"
+                                    class="button-path-apply"
+                            >Apply</a
+                            >
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
-            </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="https://apply.intostudy.com/application/course/aCI3A000000CabxWAC"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
-            </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="/pages/application-program.html"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
-            </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="https://apply.intostudy.com/application/course/aCI3A000000CabxWAC"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-results-row-result">
-            <div class="university-logo-search">
-              <a href="#" class="uni-logo-link">
-                <img
-                  src="/img/city-logo-web.svg"
-                  style="width: 100px; height: 100px"
-                  alt="INTO City Uni"
-                />
-              </a>
-            </div>
-            <div class="search-results-facultety-row">
-              <div class="top-content-facultety-row">
-                <h4 class="main-program-name-result">
-                  Sociology with Psychology-BSc (Hons)
-                </h4>
-                <h5 class="text-university-place">
-                  <a href="#">City University of London</a>
-                </h5>
-              </div>
-              <div class="bottom-content-option-program">
-                <h3 class="option-program-name">
-                  <a href="#">International Foundation in Humanities and Law</a>
-                </h3>
-                <div class="link-for-apply-path">
-                  <a
-                    id="international-foundation-in-humanities-and-law"
-                    href="https://apply.intostudy.com/application/course/aCI3A000000CabxWAC"
-                    target="_blank"
-                    class="button-path-apply"
-                    >Apply</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
         </div>
-      </div>
     </div>
+</div>
 
-    <script>
-      function openNav() {
+<script>
+    function addUrlParameter(name, value) {
+        let searchParams = new URLSearchParams(window.location.search);
+
+        if (['country', 'level', 'admission'].includes(name)) {
+             searchParams.delete('?');
+        }
+
+        if (searchParams.has(name) && searchParams.get(name) === value) {
+            searchParams.delete(name);
+        } else {
+            searchParams.set(name, value);
+        }
+        window.location.search = searchParams.toString()
+    }
+</script>
+
+<script>
+    function openNav() {
         document.getElementById("myNav").style.width = "100%";
-      }
+    }
 
-      function closeNav() {
+    function closeNav() {
         document.getElementById("myNav").style.width = "0%";
-      }
-    </script>
+    }
+</script>
 
 {% endblock %}

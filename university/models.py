@@ -35,7 +35,7 @@ class AdmissionsModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
 
     def __str__(self):
-        return self.date
+        return self.directions
 
     class Meta:
         verbose_name = _('Admission')
@@ -44,6 +44,7 @@ class AdmissionsModel(models.Model):
 
 class UniversityModel(models.Model):
     title = models.CharField(max_length=120, verbose_name=_('title'))
+    logo = models.FileField(upload_to='university', verbose_name=_('logo'))
     descriptions = models.TextField(verbose_name=_('descriptions'))
     country = models.ForeignKey(CountryModel, on_delete=models.CASCADE, verbose_name=_('country'))
     level = models.ForeignKey(StudyLevelModel, on_delete=models.CASCADE, verbose_name=_('level'))
