@@ -270,13 +270,11 @@
                             <a href="#">{{ university.admission }}</a>
                         </h3>
                         <div class="link-for-apply-path">
-                            <a
-                                    id="international-foundation-in-humanities-and-law"
-                                    href="/pages/application-program.html"
+                            <a id="international-foundation-in-humanities-and-law"
+                                    href="{% url 'uni:single' slug=university.slug %}"
                                     target="_blank"
                                     class="button-path-apply"
-                            >Apply</a
-                            >
+                            >Apply</a>
                         </div>
                     </div>
                 </div>

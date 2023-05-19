@@ -15,9 +15,10 @@ class StudyLevelModelAdmin(admin.ModelAdmin):
 
 @admin.register(AdmissionsModel)
 class AdmissionsModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'date', 'directions', 'created_at', 'updated_at']
+    list_display = ['id', 'start_date', 'end_date', 'directions', 'created_at', 'updated_at']
 
 
 @admin.register(UniversityModel)
 class UniversityModelAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'country', 'created_at', 'updated_at']
+    prepopulated_fields = {"slug": ("title",)}

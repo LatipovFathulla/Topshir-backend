@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel
 
@@ -45,3 +45,8 @@ class ApplyUniversityView(ListView):
 
         return context
 
+
+class UniversityDetailView(DetailView):
+    template_name = 'application-program.html'
+    model = UniversityModel
+    extra_context = {'title': 'University'}
