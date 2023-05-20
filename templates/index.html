@@ -33,12 +33,17 @@
           style="color: #fff"
           >What do you want to study?</label
         >
-        <input
+        <form action="{% url 'uni:apply' %}">
+          <input
           type="search"
           class="form-control"
+          name="q"
+          value="{{ request.GET.q}}"
           id="exampleFormControlInput1"
           placeholder="eg.Academic English"
         />
+        </form>
+
       </div>
     </div>
 
@@ -54,109 +59,26 @@
         class="row justify-content-center universities-flag-buttons"
         style="gap: 5px"
       >
+        {% for country in country %}
         <div class="col-sm-6 col-md-4 col-xl-3 pb-3">
           <a href="/pages/universities.html">
             <button type="button" class="flag-button rounded">
-              <div
-                class="row"
-                style="
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                "
-              >
+              <div class="row" style="display: flex; align-items: center; justify-content: center;">
                 <div class="col flag-img">
-                  <img
-                    alt="UK flag"
-                    src="{% static 'img/uk.svg' %}"
-                    style="width: 100%; max-width: 100px; max-height: 50px"
-                  />
+                  <img alt="UK flag" src="{{ country.image.url }}" style="width: 100%; max-width: 100px; max-height: 50px" />
                 </div>
                 <div class="col uni-text">
-                  <div class="uni-country mt-1">UK</div>
-                  <div
-                    class="uni-count mt-2"
-                    style="
-                      line-height: 14px;
-                      line-height: 14px;
-                      font-size: 14px;
-                      color: #ccc;
-                    "
-                  >
-                    12 Universities
+                  <div class="uni-country mt-1">{{ country.title }}</div>
+                  <div class="uni-count mt-2" style="line-height: 14px; font-size: 14px; color: #ccc;">
+                    {{ country.universitymodel_set.count }} Universities
                   </div>
                 </div>
               </div>
             </button>
           </a>
         </div>
-        <div class="col-sm-6 col-md-4 col-xl-3 pb-3">
-          <a href="/pages/universities.html">
-            <button type="button" class="flag-button rounded">
-              <div
-                class="row"
-                style="
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                "
-              >
-                <div class="col flag-img">
-                  <img
-                    alt="USA flag"
-                    src="{% static 'img/us.svg' %}"
-                    style="width: 100%; max-width: 100px; max-height: 50px"
-                  />
-                </div>
-                <div class="col uni-text">
-                  <div class="uni-country mt-1">US</div>
-                  <div
-                    class="uni-count mt-2"
-                    style="
-                      font-size: 14px;
-                      line-height: 14px;
-                      font-size: 14px;
-                      color: #ccc;
-                    "
-                  >
-                    11 Universities
-                  </div>
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-xl-3 pb-3">
-          <a href="/pages/universities.html">
-            <button type="button" class="flag-button rounded">
-              <div
-                class="row"
-                style="
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                "
-              >
-                <div class="col flag-img">
-                  <img
-                    alt="UK flag"
-                    src="{% static 'img/australia.svg' %}"
-                    style="width: 100%; max-width: 100px; max-height: 50px"
-                  />
-                </div>
-                <div class="col uni-text">
-                  <div class="uni-country mt-1">Australia</div>
-                  <div
-                    class="uni-count mt-2"
-                    style="font-size: 14px; line-height: 14px; color: #ccc"
-                  >
-                    1 University
-                  </div>
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
+      {% endfor %}
+
       </div>
 
       <!-- swiper Logo of Universities -->

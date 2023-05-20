@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('staticpages.urls'), name='pages'),
     path('university/', include('university.urls'), name='uni'),
     path('__debug__/', include('debug_toolbar.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

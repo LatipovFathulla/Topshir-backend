@@ -11,149 +11,42 @@
             <h4 class="filter-class">Filter by</h4>
             <hr>
             <h4 class="filter-class">Country</h4>
-            {% for country in country %}
-            {{ country }}
-            {% endfor %}
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="us"
-                        name="US"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label class="" for="us"><span class=""> US</span></label>
-            </div>
+             {% for country in country %}
+                 <div class="class-check-country" onclick="addUrlParameter('country', '{{ country.pk }}')" >
+                    <input
+                      type="checkbox"
+                      id="{{ country.pk }}"
+                      name="{{ country }}"
+                      {% if request.GET.country == country.pk|stringformat:'i' %}checked{% endif %}
+
+                    /><label class="" for="{{ country.pk }}"><span class=""> {{ country }}</span></label>
+                  </div>
+                {% endfor %}
             <h4 class="filter-class">Study Level</h4>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="a-level"
-                        name="A-Level"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-            "
-                    for="a-level"
-            ><span class=""> A-Level</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="english-language"
-                        name="English Language"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-              "
-                    for="english-language"
-            ><span class=""> English Language</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="graduate"
-                        name="Graduate"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                "
-                    for="graduate"
-            ><span class=""> Graduate</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="transfer"
-                        name="Transfer"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                  "
-                    for="transfer"
-            ><span class=""> Transfer</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="undergraduate"
-                        name="Undergraduate"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                    "
-                    for="undergraduate"
-            ><span class=""> Undergraduate</span></label
-            >
-            </div>
+           {% for level in level %}
+                    <div class="class-check-country" onclick="addUrlParameter('level', '{{ level.pk }}')">
+                        <input  type="checkbox"
+                                id="{{ level.pk }}"
+                                name="{{ level }}"
+                                {% if request.GET.level == level.pk|stringformat:'i' %}checked{% endif %}
+                                />
+                        <label class="" for="{{ level.pk }}"><span class="">{{ level }}</span></label>
+                    </div>
+            {% endfor %}
+
             <h4 class="filter-class">University</h4>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="city-university-of-london"
-                        name="City University of London"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                      "
-                    for="city-university-of-london"
-            ><span class=""> City University of London</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="into-manchester"
-                        name="INTO Manchester"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                        "
-                    for="into-manchester"
-            ><span class=""> INTO Manchester</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="into-manchester-in-partnership-with-the-university"
-                        name="INTO Manchester in partnership with The University"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                          "
-                    for="into-manchester-in-partnership-with-the-university"
-            ><span class=""> INTO Manchester in partnership</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="into-stirling-sec"
-                        name="INTO Stirling SEC"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                            "
-                    for="into-stirling-sec"
-            ><span class=""> INTO Stirling SEC</span></label
-            >
-            </div>
-            <div class="class-check-country">
-                <input
-                        type="checkbox"
-                        id="london-world-education-centre"
-                        name="London World Education Centre"
-                        class="veZkDyGGdKWHe9huiusC"
-                /><label
-                    class="
-                              "
-                    for="london-world-education-centre"
-            ><span class=""> London World Education Centre</span></label
-            >
-            </div>
+            {% for admission in admission %}
+                <div class="class-check-country" onclick="addUrlParameter('admission', '{{ admission.pk }}')">
+                    <input
+                            type="checkbox"
+                            id="{{ admission.pk }}"
+                            name="{{ admission }}"
+                            {% if request.GET.admission == admission.pk|stringformat:'i' %}checked{% endif %}
+                    /><label
+                        class=""
+                        for="city-university-of-london"><span class="">{{ admission }}</span></label>
+                </div>
+                {% endfor %}
         </div>
     </div>
 </div>
@@ -267,7 +160,9 @@
                     </div>
                     <div class="bottom-content-option-program">
                         <h3 class="option-program-name">
-                            <a href="#">{{ university.admission }}</a>
+                            {% for admission in university.admission.all %}
+                                  <a href="#">{{ admission }}</a>
+                            {% endfor %}
                         </h3>
                         <div class="link-for-apply-path">
                             <a id="international-foundation-in-humanities-and-law"

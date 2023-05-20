@@ -81,6 +81,18 @@
               </div>
             </div>
           </div>
+<!--      <h3>Block</h3>-->
+<!--{% for form in form_uni %}-->
+<!--  <form action="" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.form_fields|safe }}-->
+<!--  </form>-->
+<!--{% endfor %}-->
+<!--      <form action="" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        {{ object.form.as_p }}-->
+<!--        <button type="submit">send</button>-->
+<!--      </form>-->
           <!-- second block -->
           <div class="your-programs-block" id="aboutYou" >
             <div class="ng-star-inserted">
@@ -257,7 +269,7 @@
                 Terms and conditions
               </h2>
               <p class="text-of-block-ng">
-                
+                  {{ object.terms_and_conditions }}
               </p>
             </div>
           </div>

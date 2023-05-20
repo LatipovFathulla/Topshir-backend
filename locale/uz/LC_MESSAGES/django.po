@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 18:54+0500\n"
+"POT-Creation-Date: 2023-05-20 12:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,92 +18,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: topshir/settings.py:103
+#: topshir/settings.py:107
 msgid "English"
 msgstr ""
 
-#: topshir/settings.py:104
+#: topshir/settings.py:108
 msgid "Russian"
 msgstr ""
 
-#: topshir/settings.py:105
+#: topshir/settings.py:109
 msgid "O'zbek"
 msgstr ""
 
-#: university/models.py:6 university/models.py:46
+#: university/models.py:8 university/models.py:49
 msgid "title"
 msgstr ""
 
-#: university/models.py:7 university/models.py:20 university/models.py:34
-#: university/models.py:53
+#: university/models.py:9 university/models.py:22 university/models.py:37
+#: university/models.py:57
 msgid "created_at"
 msgstr ""
 
-#: university/models.py:8 university/models.py:21 university/models.py:35
-#: university/models.py:54
+#: university/models.py:10 university/models.py:23 university/models.py:38
+#: university/models.py:58
 msgid "updated_at"
 msgstr ""
 
-#: university/models.py:14
+#: university/models.py:16
 msgid "Country"
 msgstr ""
 
-#: university/models.py:15
+#: university/models.py:17
 msgid "Countries"
 msgstr ""
 
-#: university/models.py:19 university/models.py:50
+#: university/models.py:21 university/models.py:54
 msgid "level"
 msgstr ""
 
-#: university/models.py:27
+#: university/models.py:29
 msgid "Study Level"
 msgstr ""
 
-#: university/models.py:28
+#: university/models.py:30
 msgid "Study Levels"
 msgstr ""
 
-#: university/models.py:32
+#: university/models.py:34 university/models.py:35
 msgid "date"
 msgstr ""
 
-#: university/models.py:33
+#: university/models.py:36
 msgid "directions"
 msgstr ""
 
-#: university/models.py:41
+#: university/models.py:44
 msgid "Admission"
 msgstr ""
 
-#: university/models.py:42
+#: university/models.py:45
 msgid "Admissions"
 msgstr ""
 
-#: university/models.py:47
-msgid "logo"
-msgstr ""
-
-#: university/models.py:48
-msgid "descriptions"
-msgstr ""
-
-#: university/models.py:49
-msgid "country"
+#: university/models.py:50
+msgid "slug"
 msgstr ""
 
 #: university/models.py:51
-msgid "admission"
+msgid "logo"
 msgstr ""
 
 #: university/models.py:52
+msgid "descriptions"
+msgstr ""
+
+#: university/models.py:53
+msgid "country"
+msgstr ""
+
+#: university/models.py:55
+msgid "admission"
+msgstr ""
+
+#: university/models.py:56
 msgid "Terms and Conditions"
 msgstr ""
 
-#: university/models.py:60
+#: university/models.py:69
 msgid "University"
 msgstr ""
 
-#: university/models.py:61
+#: university/models.py:70
 msgid "Universities"
 msgstr ""

@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 
 from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel
@@ -28,7 +29,7 @@ class ApplyUniversityView(ListView):
             qs = qs.filter(level_id=level)
 
         if admission:
-            qs = qs.filter(admission_id=admission)
+            qs = qs.filter(admission__id=admission)
 
         if sort == 'asc':
             qs = qs.order_by('created_at')
@@ -42,6 +43,33 @@ class ApplyUniversityView(ListView):
         context['country'] = CountryModel.objects.order_by('-pk')
         context['level'] = StudyLevelModel.objects.order_by('-pk')
         context['admission'] = AdmissionsModel.objects.order_by('-pk')
+
+        return context
+
+
+class UniversityStudentListView(ListView):
+    template_name = 'universities.html'
+    paginate_by = 6
+    extra_context = {'title': 'All Universities'}
+    context_object_name = 'stundets_universities'
+
+    def get_queryset(self):
+        qs = UniversityModel.objects.order_by('-pk')
+
+        q = self.request.GET.get('q')
+        country = self.request.GET.get('country')
+
+        if q:
+            qs = qs.filter(title__icontains=q)
+
+        if country:
+            qs = qs.filter(country_id=country)
+
+        return qs
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['country'] = CountryModel.objects.order_by('-pk')
 
         return context
 

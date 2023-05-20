@@ -1,10 +1,34 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+
+from university.models import UniversityModel, CountryModel
 
 
-class HomeTemplateView(TemplateView):
+class HomeTemplateView(ListView):
     template_name = 'index.html'
     extra_context = {'title': 'Topshir Uz | Study Abroad'}
+    paginate_by = 6
+    context_object_name = 'homes'
+
+    def get_queryset(self):
+        qs = UniversityModel.objects.order_by('-pk')
+
+        q = self.request.GET.get('q')
+        country = self.request.GET.get('country')
+
+        if q:
+            qs = qs.filter(title__icontains=q)
+
+        if country:
+            qs = qs.filter(country_id=country)
+
+        return qs
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['country'] = CountryModel.objects.order_by('-pk')
+
+        return context
 
 
 class AboutIntoTemplateView(TemplateView):
