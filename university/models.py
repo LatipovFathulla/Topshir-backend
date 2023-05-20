@@ -32,8 +32,8 @@ class StudyLevelModel(models.Model):
 
 
 class AdmissionsModel(models.Model):
-    start_date = models.DateField(verbose_name=_('date'))
-    end_date = models.DateField(verbose_name=_('date'))
+    start_date = models.DateField(verbose_name=_('start_date'))
+    end_date = models.DateField(verbose_name=_('end_date'))
     directions = models.TextField(verbose_name=_('directions'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))

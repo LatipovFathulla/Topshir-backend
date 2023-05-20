@@ -1,4 +1,6 @@
 {% load static %}
+{% load mytags %}
+{% load i18n %}
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="canvas-open">
@@ -13,14 +15,18 @@
       </div> -->
       <div class="header-configure-area">
         <div class="language-option">
-          <img src="{% static 'img/flag.jpg' %}" alt="" />
-          <span>ENG<i class="fa fa-angle-down"></i></span>
-          <div class="flag-dropdown">
-            <ul>
-              <li><a href="/uzb">Uzb</a></li>
-              <li><a href="/rus">Rus</a></li>
-            </ul>
-          </div>
+           {% get_current_language as lang %}
+				   {% get_available_languages as langs %}
+                  <span> {{ lang }} <i class="fa fa-angle-down"></i></span>
+                  <div class="flag-dropdown">
+                    <ul>
+                      	{% for l in langs %}
+						 {% if l.0 != lang %}
+                            <li><a href="{% get_url_lang request l.0 %}"> {{ l.0 }} </a></li>
+                         {% endif %}
+						{% endfor %}
+                    </ul>
+                  </div>
         </div>
         <a href="{% url 'uni:apply' %}" class="bk-btn">Apply now</a>
       </div>
@@ -99,12 +105,16 @@
                 </div>
                 <a href="{% url 'uni:apply' %}" class="bk-btn">Apply now</a>
                 <div class="language-option">
-                  <img src="{% static 'img/flag.jpg' %}" alt="" />
-                  <span>ENG<i class="fa fa-angle-down"></i></span>
+                  {% get_current_language as lang %}
+				   {% get_available_languages as langs %}
+                  <span> {{ lang }} <i class="fa fa-angle-down"></i></span>
                   <div class="flag-dropdown">
                     <ul>
-                      <li><a href="/uzb">Uzb</a></li>
-                      <li><a href="/rus">Rus</a></li>
+                      	{% for l in langs %}
+						 {% if l.0 != lang %}
+                            <li><a href="{% get_url_lang request l.0 %}"> {{ l.0 }} </a></li>
+                         {% endif %}
+						{% endfor %}
                     </ul>
                   </div>
                 </div>
