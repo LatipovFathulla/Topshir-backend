@@ -1532,7 +1532,7 @@ article {
     font-weight: 400;
 }
 
-/*university our students css */
+/*blog our students css */
 #blog_students {
     display: flex;
 }
@@ -2164,3 +2164,27 @@ a {
     border-radius: .7rem;
     max-width: 500px;
   }
+.login-form-section { 
+    max-width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 15px;
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+.end-footer-form-text strong a:hover { 
+    color: #005d60;
+}  

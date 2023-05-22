@@ -68,6 +68,9 @@
           <li>
             <a href="{% url 'pages:contacts' %}">Contact</a>
           </li>
+           <li>
+               <a href="login.html">Login</a>
+           </li>
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -173,6 +176,15 @@
                     <li>
                       <a href="{% url 'pages:contacts' %}">Contact</a>
                     </li>
+                    {% if user.is_authenticated %}
+                     <li>
+                      <a href="{% url 'auth-us:login' %}"><i class="fa fa-user" style="margin-left: 4px;padding-right: 4px"></i>Profile</a>
+                    </li>
+                    {% else %}
+                    <li>
+                      <a href="{% url 'auth-us:login' %}">Login</a>
+                    </li>
+                    {% endif %}
                   </ul>
                 </nav>
                 <!-- <div class="nav-right search-switch">

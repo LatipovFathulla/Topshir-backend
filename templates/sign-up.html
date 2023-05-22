@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- About Main section -->
+<h3 style="text-align: center;margin-top: 10%">Registration</h3>
+    <div class="body-container">
+        <div class="login-form-section">
+            <form method="post">
+                {% csrf_token %}
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label" >Full name</label>
+                <input type="text" class="form-control" name="username" id="formGroupExampleInput" placeholder="Full name">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label" >Phone number</label>
+                <input type="number" class="form-control" name="last_name" id="formGroupExampleInput2" placeholder="Phone number">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label" >Password</label>
+                <input type="password" class="form-control" name="password" id="formGroupExampleInput2" placeholder="Enter password">
+              </div>
+              <button type="submit" class="btn btn-danger">Submit</button>
+              </form>
+        </div>
+    </div>
+{% endblock %}
+<!-- registration.html -->

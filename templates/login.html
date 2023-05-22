@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+   <style>
+    input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+   </style>
+
+    <!-- About Main section -->
+    <div class="body-container">
+      <h2 style="text-align:center; margin-top: 10%">Login</h2>
+        <div class="login-form-section">
+           {% if error_message %}
+            <p>{{ error_message }}</p>
+            {% endif %}
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Phone number</label>
+                <input type="text" class="form-control" name="username" id="formGroupExampleInput2" placeholder="+998">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="formGroupExampleInput2" name="password" placeholder="Enter password">
+              </div>
+              <button type="submit" class="btn btn-danger">Submit</button>
+                   <br>
+              <span class="end-footer-form-text">
+                Don't have an account?<strong><a href="{% url 'auth-us:register' %}">Sign Up</a></strong>
+              </span>
+              </form>
+        </div>
+    </div>
+{% endblock %}

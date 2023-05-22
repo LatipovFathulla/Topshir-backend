@@ -14,6 +14,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('staticpages.urls'), name='pages'),
+    path('auth/', include('auth.urls'), name='auth-us'),
     path('university/', include('university.urls'), name='uni'),
 )
 
