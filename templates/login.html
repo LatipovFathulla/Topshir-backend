@@ -16,10 +16,10 @@
     <!-- About Main section -->
     <div class="body-container">
       <h2 style="text-align:center; margin-top: 10%">Login</h2>
-        <div class="login-form-section">
-           {% if error_message %}
-            <p>{{ error_message }}</p>
+         {% if error_message %}
+            <p style="text-align: center">{{ error_message }}</p>
             {% endif %}
+        <div class="login-form-section">
             <form method="post">
               {% csrf_token %}
               <div class="mb-3">

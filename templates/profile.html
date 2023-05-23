@@ -1,0 +1,368 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Profile container */
+    .profile {
+        margin: 20px 0;
+    }
+
+    /* Profile sidebar */
+    .profile-sidebar {
+        padding: 20px 0 10px 0;
+        background: #fff;
+    }
+
+    .profile-userpic img {
+        float: none;
+        margin: 0 auto;
+        width: 50%;
+        height: 50%;
+        -webkit-border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-radius: 50% !important;
+    }
+
+    .profile-usertitle {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .profile-usertitle-name {
+        color: #5a7391;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    .profile-usertitle-job {
+        text-transform: uppercase;
+        color: #5b9bd1;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .profile-userbuttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .profile-userbuttons .btn {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 6px 15px;
+        margin-right: 5px;
+    }
+
+    .profile-userbuttons .btn:last-child {
+        margin-right: 0px;
+    }
+
+    .profile-usermenu {
+        margin-top: 30px;
+    }
+
+    .profile-usermenu ul li {
+        border-bottom: 1px solid #f0f4f7;
+    }
+
+    .profile-usermenu ul li:last-child {
+        border-bottom: none;
+    }
+
+    .profile-usermenu ul li a {
+        color: #93a3b5;
+        font-size: 19px;
+        font-weight: 400;
+    }
+
+    .profile-usermenu ul li a i {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+
+    .profile-usermenu ul li a:hover {
+        background-color: #fafcfd;
+        color: #5b9bd1;
+    }
+
+    .profile-usermenu ul li.active {
+        border-bottom: none;
+    }
+
+    .profile-usermenu ul li.active a {
+        color: #5b9bd1;
+        background-color: #f6f9fb;
+        border-left: 2px solid #5b9bd1;
+        margin-left: -2px;
+    }
+
+    /* Profile Content */
+    .profile-content {
+        padding: 20px;
+        background: #fff;
+        min-height: 460px;
+    }
+
+    .dashboard-stat,
+    .portlet {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+
+    .portlet {
+        margin-top: 0;
+        margin-bottom: 25px;
+        padding: 0;
+        border-radius: 4px;
+    }
+
+    .portlet.bordered {
+        border-left: 2px solid #e6e9ec !important;
+    }
+
+    .portlet.light {
+        padding: 12px 20px 15px;
+        background-color: #fff;
+    }
+
+    .portlet.light.bordered {
+        border: 1px solid #e7ecf1 !important;
+    }
+
+    .list-separated {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .profile-stat {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f0f4f7;
+    }
+
+    .profile-stat-title {
+        color: #7f90a4;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .uppercase {
+        text-transform: uppercase !important;
+    }
+
+    .profile-stat-text {
+        color: #5b9bd1;
+        font-size: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .profile-desc-title {
+        color: #7f90a4;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .profile-desc-text {
+        color: #7e8c9e;
+        font-size: 14px;
+    }
+
+    .margin-top-20 {
+        margin-top: 20px !important;
+    }
+
+    [class*=" fa-"]:not(.fa-stack),
+    [class*=" glyphicon-"],
+    [class*=" icon-"],
+    [class^="fa-"]:not(.fa-stack),
+    [class^="glyphicon-"],
+    [class^="icon-"] {
+        display: inline-block;
+        line-height: 14px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .profile-desc-link i {
+        width: 22px;
+        font-size: 19px;
+        color: #abb6c4;
+        margin-right: 5px;
+    }
+
+    .profile-desc-link a:hover {
+        color: #0808a4;
+    }
+
+    .include-buttons a.active {
+        background-color: #ccc;
+    }
+
+    .profile-content {
+        display: none;
+    }
+</style>
+
+<!-- About Main section -->
+<div class="container">
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic" style="text-align: center">
+                    <img
+                            src="{% static 'img/person.png' %}"
+                            class="img-responsive"
+                            alt=""
+                    />
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">{{ user.username }}</div>
+                    {% if user.last_name %}
+                    <div class="profile-usertitle-job">+{{ user.last_name }}</div>
+                    {% else %}
+                    <div class="profile-usertitle-job">+{{ user.last_name }}</div>
+                    {% endif %}
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+                <div class="profile-userbuttons">
+                    <button type="button" class="btn btn-success btn-sm">
+                        Active
+                    </button>
+                    <a href="{% url 'auth-us:logout' %}">
+                        <button
+                                class="btn btn-danger btn-sm"
+                                type="submit"
+                        >
+                            Log out
+                        </button>
+                    </a>
+                </div>
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="include-buttons">
+                        <li class="active">
+                            <a
+                                    href="javascript:void(0)"
+                                    onclick="openBar(event, 'overview')"
+                                    class="profi-links" id="defaultOpenBar"
+                            >
+                                <i class="glyphicon glyphicon-home"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    href="javascript:void(0)"
+                                    onclick="openBar(event, 'settings')"
+                                    class="profi-links"
+                            >
+                                <i class="glyphicon glyphicon-user"></i>
+                                Universities
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+
+                <div class="portlet light bordered">
+                    <div>
+                        <h4 class="profile-desc-title">About Jason Davis</h4>
+                        <span class="profile-desc-text">
+                  Lorem ipsum dolor sit amet diam nonummy nibh dolore.
+                </span>
+                        <div class="margin-top-20 profile-desc-link">
+                            <i class="fa fa-globe"></i>
+                            <a href="https://www.apollowebstudio.com"
+                            >apollowebstudio.com</a
+                            >
+                        </div>
+                        <div class="margin-top-20 profile-desc-link">
+                            <i class="fa fa-twitter"></i>
+                            <a href="https://www.twitter.com/jasondavisfl/"
+                            >@jasondavisfl</a
+                            >
+                        </div>
+                        <div class="margin-top-20 profile-desc-link">
+                            <i class="fa fa-facebook"></i>
+                            <a href="https://www.facebook.com/">JasonDavisFL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content" id="overview">
+                Тут вы можете найти вами выбранные университеты
+            </div>
+            <div class="profile-content" id="settings">
+                <div class="all-university-table-row">
+                    {% for university in stundets_universities %}
+                    <div class="filter-university-list-group col-xl-3 col-lg-4 col-sm-4">
+                        <div class="university-title-content">
+                            <a href="{% url 'uni:apply' %}" class="link-to-university">
+                                <img class="main-img-university"
+                                     src="https://ctfimages.intoglobal.com/xw2h6mjophtz/2lGKySzY5bp9mqyIdF6JOD/1794953125663f4d1e081a9244af918c/city-university-hero.jpg?q=75&fm=webP&h=300&w=300&fit=fill"
+                                     alt="backg-img-university">
+                                <p class="university-tile-content-title">{{ university.title }}</p>
+                                <p class="university-tile-content-description">{{ university.descriptions }}</p>
+                                <a href="{% url 'uni:apply' %}"> <span class="l-cta w-100">View more</span></a>
+                                <img class="flag-country" alt="Flag"
+                                     src="{{ university.country.image.url }}">
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="profile-content" id="help">Helppp</div>
+    </div>
+</div>
+</div>
+<link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+        crossorigin="anonymous"
+/>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"
+></script>
+
+<script>
+    function openBar(evt, barName) {
+        // Declare all variables
+        let i, profcontent, prolinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        profcontent = document.getElementsByClassName("profile-content");
+        for (i = 0; i < profcontent.length; i++) {
+            profcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        prolinks = document.getElementsByClassName("profi-links");
+        for (i = 0; i < prolinks.length; i++) {
+            prolinks[i].className = prolinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(barName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpenBar").click();
+</script>
+{% endblock %}

@@ -2,8 +2,10 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views.generic import ListView, TemplateView
+
+from university.models import UniversityModel
 
 
 def register(request):
@@ -54,3 +56,19 @@ def login_view(request):
 class CheckoutListView(TemplateView):
     template_name = 'checkout.html'
     extra_context = {'title': 'Checkout'}
+
+
+class ProfileListView(TemplateView):
+    template_name = 'profile.html'
+    extra_context = {'title': 'Profile'}
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['stundets_universities'] = UniversityModel.objects.order_by('-pk')
+
+        return context
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('auth-us:login')
