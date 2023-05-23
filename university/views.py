@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
 from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel
 
@@ -79,3 +79,7 @@ class UniversityDetailView(DetailView):
     template_name = 'application-program.html'
     model = UniversityModel
     extra_context = {'title': 'University'}
+
+
+class BlogListView(TemplateView):
+    template_name = 'blog.html'
