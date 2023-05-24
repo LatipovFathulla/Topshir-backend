@@ -83,6 +83,12 @@ class BlogModel(models.Model):
     def __str__(self):
         return self.title
 
+    def get_prev(self):
+        return self.get_previous_by_created_at()
+
+    def get_next(self):
+        return self.get_next_by_created_at()
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
