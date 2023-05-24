@@ -1,0 +1,85 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+  <style>
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  </style>
+
+
+    <!-- About Main section -->
+    <div class="body-container">
+        <div class="page-section">
+          <div
+            class="about-image"
+            style="background-color: #CBCBCB; text-align: center"
+          >
+            <img style="max-width: 100%;"
+              src="{{ object.image.url}}"
+              alt="About into img"
+              class="img-of-about"
+            />
+          </div>
+          <div
+            class="orderedComponent">
+            <div class="row page-text-block-container" style="margin: 0 auto !important;">
+              <div class="col-12 col-lg-8 col-xl-8">
+                <h1 class="h1plus">
+                 {{ object.title }}
+                </h1>
+                <p
+                  style="font-size: 18px; line-height: 30px; margin-bottom: 25px"
+                >
+                  {{ object.short_description }}
+                </p>
+                <p
+                  style="font-size: 18px; line-height: 30px; margin-bottom: 25px"
+                >
+                  {{ object.long_description }}
+                </p>
+              </div>
+            </div>
+          </div>
+           <!-- cards end section -->
+<!--         <div class="row row-cols-1 row-cols-md-3 g-4" id="about-cards">-->
+<!--            <div class="col" style="margin-bottom: 15px;">-->
+<!--              <div class="card h-100">-->
+<!--                <img src="https://ctfimages.intoglobal.com/xw2h6mjophtz/3VJgby2q5A4TdjMgYNbpAF/632e1069710361e6b7e312e13ef5f0a2/59497.jpg?q=75&fm=webP&h=250&w=350&fit=fill" class="card-img-top" alt="...">-->
+<!--                <div class="card-body">-->
+<!--                  <h5 class="card-title">Why choose INTO in the UK?</h5>-->
+<!--                  <p class="card-text">Read more about how INTO helps you study abroad in the UK.</p>-->
+<!--                  <a href="#" class="find-university">Find out more</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col" style="margin-bottom: 15px;">-->
+<!--              <div class="card h-100">-->
+<!--                <img src="https://ctfimages.intoglobal.com/xw2h6mjophtz/2bkqshmJQuYyfvHrQWFSZ8/98cea716d6ece8392d0b32b08a916f37/09232019_OutdoorPatio_BSC_086.jpg?q=75&fm=webP&h=250&w=350&fit=fill" class="card-img-top" alt="...">-->
+<!--                <div class="card-body">-->
+<!--                  <h5 class="card-title">Why choose INTO in the US?</h5>-->
+<!--                  <p class="card-text">Read more about how INTO helps you study abroad in US.</p>-->
+<!--                  <a href="#" class="find-university">Find out more</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col" style="margin-bottom: 15px;">-->
+<!--              <div class="card h-100">-->
+<!--                <img src="https://ctfimages.intoglobal.com/xw2h6mjophtz/2PczBPHJy2WfjSuz7qYGwE/1e8d533a661aef0d9ed872f75be8188c/Australia-Generic.jpg?q=75&fm=webP&h=250&w=350&fit=fill" class="card-img-top" alt="...">-->
+<!--                <div class="card-body">-->
+<!--                  <h5 class="card-title">Why choose INTO in the Australia?</h5>-->
+<!--                  <p class="card-text">Read more about how INTO helps you study abroad in Australia.</p>-->
+<!--                  <a href="#" class="find-university">Find out more</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+      </div>
+{% endblock %}

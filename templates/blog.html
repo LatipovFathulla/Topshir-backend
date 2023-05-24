@@ -4,71 +4,28 @@
   <div class="container mt-5">
     <h3 style="text-align: center">Blog page</h3>
       <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 mb-5" id="blog_students">
+        {% for blog in blogs %}
         <div class="col">
           <div class="card h-100">
             <img
-              src="https://ctfimages.intoglobal.com/xw2h6mjophtz/535GUH7OL1goFPSKB0JVlM/7978427f7f1ea1921c5d78f5194491cc/IS-homepage-card-TAP.jpg?q=75&fm=webP&h=250&w=350&fit=fill"
+              src="{{ blog.image.url}}"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
               <h5 class="card-title" id="blog_students_title">
-                Talk to our students
+                {{ blog.title }}
               </h5>
               <p class="card-text" id="blog_students_text">
-                Got a question about studying at one of our universities? Our
-                Student Ambassadors are here to help! They’re international
-                students just like you – so there’s no-one better to ask.
+                {{ blog.short_description }}
               </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="text-muted">Start chatting</a>
+              <a href="{% url 'uni:single-blogs' slug=blog.slug %}" class="text-muted">Learn more</a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="https://ctfimages.intoglobal.com/xw2h6mjophtz/cxRrRLPrO0CSCQas4YUqK/bf9b9c8f57077b4978eda3bd619b035f/_PAJ4572_reduce_size.jpg?q=75&fm=webP&h=250&w=350&fit=fill"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title" id="blog_students_title">
-                Read other students' stories on our blog
-              </h5>
-              <p class="card-text" id="blog_students_text">
-                From how to prepare for studying abroad all the way through to
-                the adventures and successes of INTO alumni.
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="text-muted">Read our blog</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="https://ctfimages.intoglobal.com/xw2h6mjophtz/4oB5M3QGKA4GGMiaUeuAkU/018102bd8ab2790648a0f0ed6b29e08d/Card_6.jpg?q=75&fm=webP&h=250&w=350&fit=fill"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title" id="blog_students_title">
-                How can I improve my English with INTO?
-              </h5>
-              <p class="card-text" id="blog_students_text">
-                Prepare to live and study in an English-speaking country with
-                one of our INTO English language courses, taught by experienced
-                teachers on a US or UK university campus.
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="text-muted">Learn more</a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
   </div>
 {% endblock %}

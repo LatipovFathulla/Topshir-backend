@@ -70,3 +70,24 @@ class UniversityModel(models.Model):
         verbose_name = _('University')
         verbose_name_plural = _('Universities')
 
+
+class BlogModel(models.Model):
+    title = models.CharField(max_length=255, verbose_name=_('title'))
+    slug = models.SlugField(max_length=255, unique=True, verbose_name=_('slug'))
+    image = models.FileField(upload_to='blogs', verbose_name=_('image'))
+    short_description = models.TextField(verbose_name=_('Short description'))
+    long_description = models.TextField(verbose_name=_('Long description'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Blog')
+        verbose_name_plural = _('Blogs')

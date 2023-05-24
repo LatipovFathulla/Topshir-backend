@@ -1,6 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel
+from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel, BlogModel
 
 
 @register(CountryModel)
@@ -21,3 +21,8 @@ class AdmissionsTranslationOptions(TranslationOptions):
 @register(UniversityModel)
 class UniversityTranslationOptions(TranslationOptions):
     fields = ('title', 'descriptions', 'terms_and_conditions',)
+
+
+@register(BlogModel)
+class BlogTranslationOptions(TranslationOptions):
+    fields = ('title', 'short_description', 'long_description',)

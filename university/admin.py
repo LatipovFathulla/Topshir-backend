@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel
+from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel, BlogModel
 
 
 class MyNewTranslationAdmin(TranslationAdmin):
@@ -34,4 +34,10 @@ class AdmissionsModelAdmin(MyNewTranslationAdmin):
 @admin.register(UniversityModel)
 class UniversityModelAdmin(MyNewTranslationAdmin):
     list_display = ['id', 'title', 'created_at', 'updated_at']
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(BlogModel)
+class BlogModelAdmin(MyNewTranslationAdmin):
+    list_display = ['id', 'title', 'short_description', 'created_at', 'updated_at']
     prepopulated_fields = {"slug": ("title",)}

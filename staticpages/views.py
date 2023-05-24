@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from university.models import UniversityModel, CountryModel
+from university.models import UniversityModel, CountryModel, BlogModel
 
 
 class HomeTemplateView(ListView):
@@ -27,7 +27,7 @@ class HomeTemplateView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['country'] = CountryModel.objects.order_by('-pk')
-
+        context['blogs'] = BlogModel.objects.order_by('-pk')
         return context
 
 
@@ -69,3 +69,28 @@ class AdmissionsTemplateView(TemplateView):
 class ContactTemplateView(TemplateView):
     template_name = 'contact.html'
     extra_context = {'title': 'Contacts'}
+
+
+class UKTemplateView(TemplateView):
+    template_name = 'uk.html'
+    extra_context = {'title': 'UK'}
+
+
+class USATemplateView(TemplateView):
+    template_name = 'us.html'
+    extra_context = {'title': 'USA'}
+
+
+class AustraliaTemplateView(TemplateView):
+    template_name = 'australia.html'
+    extra_context = {'title': 'Australia'}
+
+
+class LanguageTemplateView(TemplateView):
+    template_name = 'language.html'
+    extra_context = {'title': 'Language'}
+
+
+class CultureTemplateView(TemplateView):
+    template_name = 'culture.html'
+    extra_context = {'title': 'Culture'}

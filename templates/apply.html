@@ -141,7 +141,7 @@
             {% for university in universities %}
             <div class="search-results-row-result">
                 <div class="university-logo-search">
-                    <a href="#" class="uni-logo-link">
+                    <a href="{% url 'uni:single' slug=university.slug %}" class="uni-logo-link">
                         <img
                                 src="{{ university.logo.url}}"
                                 style="width: 100px; height: 100px"

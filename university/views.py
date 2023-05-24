@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, TemplateView
 
-from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel
+from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel, BlogModel
 
 
 class ApplyUniversityView(ListView):
@@ -81,5 +81,14 @@ class UniversityDetailView(DetailView):
     extra_context = {'title': 'University'}
 
 
-class BlogListView(TemplateView):
+class BlogListView(ListView):
     template_name = 'blog.html'
+    queryset = BlogModel.objects.order_by('-pk')
+    extra_context = {'title': 'Blog'}
+    context_object_name = 'blogs'
+
+
+class BlogDetailView(DetailView):
+    template_name = 'single-blog.html'
+    model = BlogModel
+    extra_context = {'title': 'Single blog'}
