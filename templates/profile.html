@@ -223,11 +223,11 @@
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">{{ user.username }}</div>
-                    {% if user.last_name %}
-                    <div class="profile-usertitle-job">+{{ user.last_name }}</div>
+                    <div class="profile-usertitle-name">{{ user.last_name }}</div>
+                    {% if user.username %}
+                    <div class="profile-usertitle-job">+{{ user.username }}</div>
                     {% else %}
-                    <div class="profile-usertitle-job">+{{ user.last_name }}</div>
+                    <div class="profile-usertitle-job">+{{ user.username }}</div>
                     {% endif %}
                 </div>
                 <!-- END SIDEBAR USER TITLE -->

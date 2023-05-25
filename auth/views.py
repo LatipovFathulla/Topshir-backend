@@ -53,6 +53,11 @@ def login_view(request):
     return render(request, 'login.html')
 
 
+def logout_view(request):
+    logout(request)
+    return redirect('auth-us:login')
+
+
 class CheckoutListView(TemplateView):
     template_name = 'checkout.html'
     extra_context = {'title': 'Checkout'}
@@ -69,6 +74,3 @@ class ProfileListView(TemplateView):
         return context
 
 
-def logout_view(request):
-    logout(request)
-    return redirect('auth-us:login')
