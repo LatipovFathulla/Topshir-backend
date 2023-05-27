@@ -9,6 +9,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('checkout/', CheckoutListView.as_view(), name='checkout'),
     path('profile/', ProfileListView.as_view(), name='profile'),
+    path('confirmation/', views.confirmation, name='confirmation'),
     path('logout/', logout_view, name='logout'),
     # Другие URL-маршруты вашего приложения
 ]

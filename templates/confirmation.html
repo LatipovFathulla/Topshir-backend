@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 style="text-align: center; margin-top: 10%">Confirmation</h3>
+    <div class="body-container">
+        <div class="login-form-section">
+            {% if error_message %}
+                <p style="text-align: center; color: red">{{ error_message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="verification_code" class="form-label">Verification code</label>
+                    <input type="text" class="form-control" name="verification_code" id="verification_code" placeholder="Enter verification code" required>
+                    {% if form.errors %}
+                        <p style="color: red">{{ form.errors.verification_code }}</p>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
