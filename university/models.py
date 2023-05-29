@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 from django.db import models
 from slugify import slugify
 from django.utils.translation import gettext_lazy as _
@@ -69,6 +70,27 @@ class UniversityModel(models.Model):
     class Meta:
         verbose_name = _('University')
         verbose_name_plural = _('Universities')
+
+
+class UniversityInputFieldModel(models.Model):
+    UNIVERSITY_INPUT_TYPES = (
+        ('checkbox', 'Checkbox'),
+        ('text', 'Text'),
+    )
+    university = models.ForeignKey(UniversityModel, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, verbose_name=_('name'))
+    input_type = models.CharField(max_length=20, choices=UNIVERSITY_INPUT_TYPES, default='text',
+                                  verbose_name=_('input type'))
+    is_checked = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _('University input')
+        verbose_name_plural = _('University inputs')
 
 
 class BlogModel(models.Model):

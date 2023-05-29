@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, TemplateView
 
-from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel, BlogModel
+from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel, BlogModel, \
+    UniversityInputFieldModel
 
 
 class ApplyUniversityView(ListView):
@@ -78,8 +80,28 @@ class UniversityStudentListView(ListView):
 class UniversityDetailView(DetailView):
     template_name = 'application-program.html'
     model = UniversityModel
-    extra_context = {'title': 'University'}
+    context_object_name = 'university'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        input_fields = UniversityInputFieldModel.objects.filter(university=self.object)
+        context['input_fields'] = input_fields
+        return context
+
+    def post(self, request, *args, **kwargs):
+        university = self.get_object()
+        input_fields = UniversityInputFieldModel.objects.filter(university=university)
+
+        for field in input_fields:
+            field_name = field.name
+            if field.input_type == 'checkbox':
+                field.is_checked = field_name in request.POST
+            else:
+                field.is_checked = False
+            field.save()
+
+        redirect_url = self.request.path  # Перенаправляем на текущий URL
+        return HttpResponseRedirect(redirect_url)
 
 class BlogListView(ListView):
     template_name = 'blog.html'

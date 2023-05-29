@@ -1,7 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel, BlogModel
+from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel, BlogModel, \
+    UniversityInputFieldModel
 
 
 class MyNewTranslationAdmin(TranslationAdmin):
@@ -35,6 +36,11 @@ class AdmissionsModelAdmin(MyNewTranslationAdmin):
 class UniversityModelAdmin(MyNewTranslationAdmin):
     list_display = ['id', 'title', 'created_at', 'updated_at']
     prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(UniversityInputFieldModel)
+class UniversityInputFieldModelAdmin(MyNewTranslationAdmin):
+    list_display = ['name', 'is_checked']
 
 
 @admin.register(BlogModel)

@@ -115,114 +115,33 @@
                 Our team will contact you via this, so make sure it's correct!
               </p>
             </div>
-            <form class="row g-3" style="max-width: 500px;">
-              <div class="col-12">
-                <input type="email" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Confirm your email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">First name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <!-- cell mobile number -->
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Cell/ Mobile number</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="+998" value="+998" maxlength="13">
-              </div>
-              <!-- preferred commuication -->
+            <form class="row g-3" style="max-width: 500px;" method="post">
+              {% csrf_token %}
+              <!-- preferred communication -->
               <div class="col-12">
                 <label for="exampleFormControlInput1" class="form-label">What is your preferred method of communication?</label>
-                <!-- CHECKBOX LIST -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
-                    Email
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                    Phone
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  <label class="form-check-label" for="exampleRadios3">
-                    SMS
-                  </label>
-                </div>
+                {% for input_field in input_fields %}
+                  {% if input_field.input_type == 'checkbox' %}
+                    <!-- Checkbox field -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="{{ input_field.name }}" id="{{ input_field.name }}" {% if input_field.is_checked %}checked{% endif %}>
+                      <label class="form-check-label" for="{{ input_field.name }}">{{ input_field.name }}</label>
+                    </div>
+                  {% else %}
+                    <!-- Input field -->
+                    <div class="form-group">
+                        <label  class="form-label">{{ input_field.name }}</label>
+                      <input type="text" class="form-control" name="{{ input_field.name }}" placeholder="{{ input_field.name }}" {% if input_field.is_checked %}value="{{ input_field.name }}"{% endif %}>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               </div>
               <!-- date of birth -->
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2; padding-left: 19px;"
-              >
-              Date of birth
-              </h2>
-              <div class="col-12" style="display: flex;">
-                <div class="col-4">
-                  <label for="exampleFormControlInput1" class="form-label">Day</label>
-                  <input type="number" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="col-4">
-                  <label for="exampleFormControlInput1" class="form-label">Month</label>
-                  <input type="number" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="col-4">
-                  <label for="exampleFormControlInput1" class="form-label">Year</label>
-                  <input type="number" class="form-control" id="exampleFormControlInput1">
-                </div>
-              </div>
-              <!-- gender  -->
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2; padding-left: 19px;"
-              >
-              Gender
-              </h2>
-              <div class="col-12" style="display: flex;">
-                
-                <!-- CHECKBOX LIST -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios4" value="option4" checked>
-                  <label class="form-check-label" for="exampleRadios4">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios5" id="exampleRadios5" value="option5">
-                  <label class="form-check-label" for="exampleRadios5">
-                    Female
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios6" id="exampleRadios6" value="option6">
-                  <label class="form-check-label" for="exampleRadios6">
-                    Would prefer not to say
-                  </label>
-                </div>
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Nationality</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Adress line</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-              </div>
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">Zip code</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1">
-              </div>
               <button type="submit" class="btn btn-primary m-3 p-3">Next</button>
             </form>
+
+
+
           </div>
           <!-- third block -->
           <div class="your-programs-block" id="addInfo" >
