@@ -2,7 +2,7 @@ from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
 from university.models import CountryModel, StudyLevelModel, AdmissionsModel, UniversityModel, BlogModel, \
-    UniversityInputFieldModel
+    UniversityInputFieldModel, ContactModel
 
 
 class MyNewTranslationAdmin(TranslationAdmin):
@@ -47,3 +47,8 @@ class UniversityInputFieldModelAdmin(MyNewTranslationAdmin):
 class BlogModelAdmin(MyNewTranslationAdmin):
     list_display = ['id', 'title', 'short_description', 'created_at', 'updated_at']
     prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(ContactModel)
+class ContactModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'first_name', 'email', 'location']

@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, TemplateView
+from django.contrib import messages
 
+from university.forms import ContactForm
 from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel, BlogModel, \
     UniversityInputFieldModel
 
@@ -103,6 +105,7 @@ class UniversityDetailView(DetailView):
         redirect_url = self.request.path  # Перенаправляем на текущий URL
         return HttpResponseRedirect(redirect_url)
 
+
 class BlogListView(ListView):
     template_name = 'blog.html'
     queryset = BlogModel.objects.order_by('-pk')
@@ -114,3 +117,15 @@ class BlogDetailView(DetailView):
     template_name = 'single-blog.html'
     model = BlogModel
     extra_context = {'title': 'Single blog'}
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact_instance = form.save()   # Сохраняем данные формы в базе данных
+            messages.success(request, 'Успешно отправлено!')  # Добавляем сообщение об успешной отправке
+            return redirect('pages:contacts')  # Перенаправляем на страницу контактов после успешной отправки
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})

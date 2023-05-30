@@ -1,202 +1,319 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+    <style>
+        .next,
+        .previous {
+            padding: 15px 10px;
+            border-radius: 6px;
+            background: deepskyblue;
+            color: white;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            width: 100px;
+            visibility: visible;
+            margin-bottom: 15px;
+        }
+
+        .next1,
+        .previous1 {
+            padding: 15px 10px;
+            border-radius: 6px;
+            background: #e1161f;
+            color: white;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            width: 100px;
+            /* visibility: hidden; */
+            margin-bottom: 15px;
+        }
+
+        .next1:hover {
+            color: #fff;
+        }
+
+        .previous1:hover {
+            color: #fff;
+        }
+
+        .tablinks-row-number-active {
+            opacity: 1 !important;
+            visibility: visible;
+            background-color: #005D60;
+        }
+
+        .tablinks-row-number-active:focus {
+            opacity: 1 !important;
+            visibility: visible;
+            background-color: #005D60;
+        }
+
+    </style>
 
     <!-- 4 steps container -->
     <div class="container" style="height: 150vh;">
-      <!-- <form action="" class="fully-program-form"> -->
+        <!-- <form action="" class="fully-program-form"> -->
         <div class="tab-common-block-top">
-          <button class="tablinks-row-number" id="defaultOpen"  onclick="openProgram(event, 'program')">1 <br> <span id="mobile-hidden-text" >Your program</span></button>
-          <button class="tablinks-row-number" onclick="openProgram(event, 'aboutYou')">2 <br> <span id="mobile-hidden-text">About you</span></button>
-          <button class="tablinks-row-number" onclick="openProgram(event, 'addInfo')">3 <br> <span id="mobile-hidden-text">Additional information</span></button>
-          <button class="tablinks-row-number" onclick="openProgram(event, 'termsCon')">4 <br> <span id="mobile-hidden-text">Terms and conditions</span></button>
+            <button class="tablinks-row-number" id="defaultOpen" onclick="openProgram(event, 'program')">1 <br> <span
+                    id="mobile-hidden-text">Your program</span></button>
+            <button class="tablinks-row-number" onclick="openProgram(event, 'aboutYou')">2 <br> <span
+                    id="mobile-hidden-text">About you</span></button>
+            <button class="tablinks-row-number" onclick="openProgram(event, 'addInfo')">3 <br> <span
+                    id="mobile-hidden-text">Additional information</span></button>
+            <button class="tablinks-row-number" onclick="openProgram(event, 'termsCon')">4 <br> <span
+                    id="mobile-hidden-text">Terms and conditions</span></button>
         </div>
 
         <hr>
 
-        
-          <div class="your-programs-block" id="program" >
+
+        <div class="your-programs-block" id="program">
             <div class="ng-star-inserted">
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2"
-              >
-                Your program
-              </h2>
-              <p class="text-of-block-ng">
-                All questions are mandatory unless indicated.
-              </p>
-              <div class="form-item-edit">
-                <span class="selected-title"> You selected: </span>
-                <p class="ngcontent-c9">
-                  <strong class="ngcontent-name-university"
-                    >{{ object.title }}
-                  </strong>
+                <h2
+                        class="title-of-block-ng"
+                        style="font-size: 25px; line-height: 1.2"
+                >
+                    Your program
+                </h2>
+                <p class="text-of-block-ng">
+                    All questions are mandatory unless indicated.
                 </p>
-                <strong class="ngcontent-name-university"
-                  >{{ object.admission }}</strong
-                >
-                <a
-                  href="{% url 'uni:apply' %}"
-                  class="back-to-edit-link"
-                  >Edit</a
-                >
-              </div>
-              <div class="select-time-prefer">
-                <strong class="prefer-time-title"
-                  >When would you prefer to start your program?</strong
-                >
-                <p class="text-of-block-ng" style="max-width: 500px">
-                  {{ object.descriptions }}
-                </p>
-                <div class="row">
-                  <div class="col-10">
-                    <ul class="scheduled-courses">
-                      <!---->
-<!--                {{ object.admission.date }}-->
-               {% for admission in object.admission.all %}
-                      <li class="ng-star-inserted">
-                        <div
-                          class="scheduled-course-date-row px-3 py-2"
-                          role="button"
-                          tabindex="0"
-                          aria-checked="false"
-                        >
-                          <div>
-                            <span class="from"
-                              >{{ admission.start_date }}</span><span class="until" translate="">until </span><span>{{ admission.end_date }}</span><!---->
-                            <div class="further-information ng-star-inserted">
-                              <hr class="my-1" />
-                              <!----><!---->
-                              <span class="ng-star-inserted">{{ admission.directions }}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-               {% endfor %}
-                      <!-- 2-semestrr -->
-                    </ul>
-                  </div>
+                <div class="form-item-edit">
+                    <span class="selected-title"> You selected: </span>
+                    <p class="ngcontent-c9">
+                        <strong class="ngcontent-name-university"
+                        >{{ object.title }}
+                        </strong>
+                    </p>
+                    <strong class="ngcontent-name-university"
+                    >{{ object.admission }}</strong
+                    >
+                    <a
+                            href="{% url 'uni:apply' %}"
+                            class="back-to-edit-link"
+                    >Edit</a
+                    >
                 </div>
-              </div>
+                <div class="select-time-prefer">
+                    <strong class="prefer-time-title"
+                    >When would you prefer to start your program?</strong
+                    >
+                    <p class="text-of-block-ng" style="max-width: 500px">
+                        {{ object.descriptions }}
+                    </p>
+                    <div class="row">
+                        <div class="col-10">
+                            <ul class="scheduled-courses">
+                                <!---->
+                                <!--                {{ object.admission.date }}-->
+                                {% for admission in object.admission.all %}
+                                    <li class="ng-star-inserted">
+                                        <div
+                                                class="scheduled-course-date-row px-3 py-2"
+                                                role="button"
+                                                tabindex="0"
+                                                aria-checked="false"
+                                        >
+                                            <div>
+                            <span class="from"
+                            >{{ admission.start_date }}</span><span class="until"
+                                                                    translate="">until </span><span>{{ admission.end_date }}</span>
+                                                <!---->
+                                                <div class="further-information ng-star-inserted">
+                                                    <hr class="my-1"/>
+                                                    <!----><!---->
+                                                    <span class="ng-star-inserted">{{ admission.directions }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                                <!-- 2-semestrr -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-<!--      <h3>Block</h3>-->
-<!--{% for form in form_uni %}-->
-<!--  <form action="" method="post">-->
-<!--    {% csrf_token %}-->
-<!--    {{ form.form_fields|safe }}-->
-<!--  </form>-->
-<!--{% endfor %}-->
-<!--      <form action="" method="post">-->
-<!--        {% csrf_token %}-->
-<!--        {{ object.form.as_p }}-->
-<!--        <button type="submit">send</button>-->
-<!--      </form>-->
-          <!-- second block -->
-          <div class="your-programs-block" id="aboutYou" >
+        </div>
+        <!--      <h3>Block</h3>-->
+        <!--{% for form in form_uni %}-->
+            <!--  <form action="" method="post">-->
+            <!--    {% csrf_token %}-->
+            <!--    {{ form.form_fields|safe }}-->
+            <!--  </form>-->
+            <!--{% endfor %}-->
+        <!--      <form action="" method="post">-->
+        <!--        {% csrf_token %}-->
+        <!--        {{ object.form.as_p }}-->
+        <!--        <button type="submit">send</button>-->
+        <!--      </form>-->
+        <!-- second block -->
+        <div class="your-programs-block" id="aboutYou">
             <div class="ng-star-inserted">
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2"
-              >
-              About You
-              </h2>
-              <p class="text-of-block-ng">
-                All questions are mandatory unless indicated.
-              </p>
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2"
-              >
-              Email address
-              </h2>
-              <p class="text-of-block-ng">
-                Our team will contact you via this, so make sure it's correct!
-              </p>
+                <h2
+                        class="title-of-block-ng"
+                        style="font-size: 25px; line-height: 1.2"
+                >
+                    About You
+                </h2>
+                <p class="text-of-block-ng">
+                    All questions are mandatory unless indicated.
+                </p>
+                <h2
+                        class="title-of-block-ng"
+                        style="font-size: 25px; line-height: 1.2"
+                >
+                    Email address
+                </h2>
+                <p class="text-of-block-ng">
+                    Our team will contact you via this, so make sure it's correct!
+                </p>
             </div>
             <form class="row g-3" style="max-width: 500px;" method="post">
-              {% csrf_token %}
-              <!-- preferred communication -->
-              <div class="col-12">
-                <label for="exampleFormControlInput1" class="form-label">What is your preferred method of communication?</label>
-                {% for input_field in input_fields %}
-                  {% if input_field.input_type == 'checkbox' %}
-                    <!-- Checkbox field -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="{{ input_field.name }}" id="{{ input_field.name }}" {% if input_field.is_checked %}checked{% endif %}>
-                      <label class="form-check-label" for="{{ input_field.name }}">{{ input_field.name }}</label>
-                    </div>
-                  {% else %}
-                    <!-- Input field -->
-                    <div class="form-group">
-                        <label  class="form-label">{{ input_field.name }}</label>
-                      <input type="text" class="form-control" name="{{ input_field.name }}" placeholder="{{ input_field.name }}" {% if input_field.is_checked %}value="{{ input_field.name }}"{% endif %}>
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              </div>
-              <!-- date of birth -->
-              <button type="submit" class="btn btn-primary m-3 p-3">Next</button>
+                {% csrf_token %}
+                <!-- preferred communication -->
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">What is your preferred method of
+                        communication?</label>
+                    {% for input_field in input_fields %}
+                        {% if input_field.input_type == 'checkbox' %}
+                            <!-- Checkbox field -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="{{ input_field.name }}"
+                                       id="{{ input_field.name }}" {% if input_field.is_checked %}checked{% endif %}>
+                                <label class="form-check-label"
+                                       for="{{ input_field.name }}">{{ input_field.name }}</label>
+                            </div>
+                        {% else %}
+                            <!-- Input field -->
+                            <div class="form-group">
+                                <label class="form-label">{{ input_field.name }}</label>
+                                <input type="text" class="form-control" name="{{ input_field.name }}"
+                                       placeholder="{{ input_field.name }}"
+                                       {% if input_field.is_checked %}value="{{ input_field.name }}"{% endif %}>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- date of birth -->
+                <button type="submit" class="btn btn-primary m-3 p-3">Next</button>
             </form>
 
 
-
-          </div>
-          <!-- third block -->
-          <div class="your-programs-block" id="addInfo" >
-            <div class="ng-star-inserted">
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2"
-              >
-              Additional information
-              </h2>
-              <p class="text-of-block-ng">
-                All questions are mandatory unless indicated.
-              </p>
-              <div class="quiz-about-history">
-                <h4 class="title-of-ques">
-                  UK education history
-                </h4>
-                <p class="text-of-ques">
-                  Have you ever studied in the UK before?
-                </p>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                   Yes
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    No
-                  </label>
-                </div>
-              </div>   
-          
-            </div>
-          </div>
-          <!-- 4th block terms and con -->
-          <div class="your-programs-block" id="termsCon" >
-            <div class="ng-star-inserted">
-              <h2
-                class="title-of-block-ng"
-                style="font-size: 25px; line-height: 1.2"
-              >
-                Terms and conditions
-              </h2>
-              <p class="text-of-block-ng">
-                  {{ object.terms_and_conditions }}
-              </p>
-            </div>
-             <a href="{% url 'auth-us:checkout' %}"><button class="btn btn-primary">Purchase</button></a>
-          </div>
         </div>
+        <!-- third block -->
+        <div class="your-programs-block" id="addInfo">
+            <div class="ng-star-inserted">
+                <h2
+                        class="title-of-block-ng"
+                        style="font-size: 25px; line-height: 1.2"
+                >
+                    Additional information
+                </h2>
+                <p class="text-of-block-ng">
+                    All questions are mandatory unless indicated.
+                </p>
+                <div class="quiz-about-history">
+                    <h4 class="title-of-ques">
+                        UK education history
+                    </h4>
+                    <p class="text-of-ques">
+                        Have you ever studied in the UK before?
+                    </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                               checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            No
+                        </label>
+                    </div>
+                </div>
 
-      <!-- </form> -->
+            </div>
+        </div>
+        <!-- 4th block terms and con -->
+        <div class="your-programs-block" id="termsCon">
+            <div class="ng-star-inserted">
+                <h2
+                        class="title-of-block-ng"
+                        style="font-size: 25px; line-height: 1.2"
+                >
+                    Terms and conditions
+                </h2>
+                <p class="text-of-block-ng">
+                    {{ object.terms_and_conditions }}
+                </p>
+            </div>
+            <a href="{% url 'auth-us:checkout' %}">
+                <button class="btn btn-primary">Purchase</button>
+            </a>
+        </div>
+        <div style="text-align: center;">
+            <button class="next" type="button" onclick="nextProgram(event)">Next</button>
+            <button class="previous" type="button" onclick="previousProgram(event)">Previous</button>
+        </div>
+    </div>
+    <!-- </form> -->
     </div>
 
     <script src="{% static '/js/select-program.js' %}"></script>
+    <script>
+        // Функция для открытия разделов
+        function openProgram(evt, programName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("your-programs-block");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks-row-number");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" tablinks-row-number-active", "");
+            }
+            document.getElementById(programName).style.display = "block";
+            evt.currentTarget.className += " tablinks-row-number-active";
+        }
+
+        // Функция для перехода к следующему разделу
+        function nextProgram(event) {
+            var tablinks = document.getElementsByClassName("tablinks-row-number");
+            var activeIndex = -1;
+            for (var i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].classList.contains("tablinks-row-number-active")) {
+                    activeIndex = i;
+                    break;
+                }
+            }
+            if (activeIndex >= 0 && activeIndex < tablinks.length - 1) {
+                openProgram(event, tablinks[activeIndex + 1].id);
+            }
+        }
+
+        function previousProgram(event) {
+            var tablinks = document.getElementsByClassName("tablinks-row-number");
+            var activeIndex = -1;
+            for (var i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].classList.contains("tablinks-row-number-active")) {
+                    activeIndex = i;
+                    break;
+                }
+            }
+            if (activeIndex > 0) {
+                openProgram(event, tablinks[activeIndex - 1].id);
+            }
+        }
+
+        // Вызов функции после загрузки страницы
+        window.addEventListener("load", function () {
+            document.getElementById("defaultOpen").click();
+        });
+    </script>
+
 {% endblock %}

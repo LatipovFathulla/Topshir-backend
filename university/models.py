@@ -119,3 +119,81 @@ class BlogModel(models.Model):
     class Meta:
         verbose_name = _('Blog')
         verbose_name_plural = _('Blogs')
+
+
+class ContactModel(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    date_of_birth = models.DateField()
+    year = models.IntegerField()
+    location = models.CharField(max_length=100)
+    mobile_number = models.CharField(max_length=20)
+    study_location = models.CharField(max_length=100, blank=True)
+    BIRTHDAY_MONTH_CHOICES = (
+        ('', 'Select your birthday month'),
+        ('January', 'January'),
+        ('February', 'February'),
+        ('March', 'March'),
+        ('April', 'April'),
+        ('May', 'May'),
+        ('June', 'June'),
+        ('July', 'July'),
+        ('August', 'August'),
+        ('September', 'September'),
+        ('October', 'October'),
+        ('November', 'November'),
+        ('December', 'December'),
+    )
+    birthday_month = models.CharField(max_length=20, choices=BIRTHDAY_MONTH_CHOICES)
+
+    CELL_CODE_CHOICES = (
+        ('', 'Cell / Phone number / Country'),
+        ('86', 'China Mainland +86'),
+        ('20', 'Egypt +20'),
+        ('91', 'India +91'),
+        ('234', 'Nigeria +234'),
+        ('92', 'Pakistan +92'),
+        ('7', 'Russia +7'),
+    )
+    cell_code = models.CharField(max_length=10, choices=CELL_CODE_CHOICES)
+
+    START_STUDYING_CHOICES = (
+        ('', 'When would you like to start studying?'),
+        ('2023', '2023'),
+        ('2024', '2024'),
+        ('2025', '2025'),
+        ('2026', '2026'),
+        ('2027', '2027'),
+    )
+    start_studying = models.CharField(max_length=10, choices=START_STUDYING_CHOICES)
+
+    SUBJECT_CHOICES = (
+        ('', 'Which subject would you like to study? (optional)'),
+        ('L1-Social Sciences', 'Social Sciences and Humanities'),
+        ('L1-Business', 'Business and Management'),
+        ('L1-Finance', 'Accounting, Economics and Finance'),
+        ('L1-Arts', 'Arts'),
+        ('L1-Computing', 'Computing and Information Systems'),
+        ('L1-Engineering', 'Engineering'),
+    )
+    subject = models.CharField(max_length=100, blank=True, choices=SUBJECT_CHOICES)
+
+    RESIDENCE_CHOICES = (
+        ('', 'Where do you live?'),
+        ('CN', 'China Mainland'),
+        ('EG', 'Egypt'),
+        ('IN', 'India'),
+        ('NG', 'Nigeria'),
+        ('PK', 'Pakistan'),
+    )
+    residence = models.CharField(max_length=100, choices=RESIDENCE_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
+
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name
+
+    class Meta:
+        verbose_name = _('Contact')
+        verbose_name_plural = _('Contacts')

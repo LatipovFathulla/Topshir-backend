@@ -107,3 +107,13 @@ function changecolor() {
 }
 if (checking == true) {
 }
+// success message
+const myTimeout = setTimeout(removeAlertMessage, 5000);
+//happens success message after clicking
+function myHappenAlert() {
+  document.getElementById("success-message-alert").style = "display: block";
+}
+function  removeAlertMessage() {
+  document.getElementById("success-message-alert").style = "display: none";
+}
+
