@@ -257,17 +257,16 @@
             </a>
         </div>
         <div style="text-align: center;">
-            <button class="next" type="button" onclick="nextProgram(event)">Next</button>
-            <button class="previous" type="button" onclick="previousProgram(event)">Previous</button>
+           <button class="next" id="nextButton" type="button">Next</button>
+            <button class="previous" id="previousButton" type="button">Previous</button>
         </div>
     </div>
     <!-- </form> -->
     </div>
 
-    <script src="{% static '/js/select-program.js' %}"></script>
     <script>
-        // Функция для открытия разделов
-        function openProgram(evt, programName) {
+        // choose program and changing block bottom row
+        function openProgram(evt, blockName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("your-programs-block");
             for (i = 0; i < tabcontent.length; i++) {
@@ -275,45 +274,82 @@
             }
             tablinks = document.getElementsByClassName("tablinks-row-number");
             for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" tablinks-row-number-active", "");
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(programName).style.display = "block";
-            evt.currentTarget.className += " tablinks-row-number-active";
+            document.getElementById(blockName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
 
-        // Функция для перехода к следующему разделу
-        function nextProgram(event) {
-            var tablinks = document.getElementsByClassName("tablinks-row-number");
-            var activeIndex = -1;
-            for (var i = 0; i < tablinks.length; i++) {
-                if (tablinks[i].classList.contains("tablinks-row-number-active")) {
-                    activeIndex = i;
-                    break;
-                }
-            }
-            if (activeIndex >= 0 && activeIndex < tablinks.length - 1) {
-                openProgram(event, tablinks[activeIndex + 1].id);
+
+        //   default open 1st item
+        document.getElementById("defaultOpen").click();
+        // Получаем все кнопки "Next" и "Previous"
+        const nextButtons = document.querySelectorAll(".next");
+        const previousButtons = document.querySelectorAll(".previous");
+
+        // Получаем все блоки этапов
+        const programBlock = document.getElementById("program");
+        const aboutYouBlock = document.getElementById("aboutYou");
+        const addInfoBlock = document.getElementById("addInfo");
+        const termsConBlock = document.getElementById("termsCon");
+
+        // Устанавливаем начальное отображение (первый этап видим, остальные скрыты)
+        programBlock.style.display = "block";
+        aboutYouBlock.style.display = "none";
+        addInfoBlock.style.display = "none";
+        termsConBlock.style.display = "none";
+
+        // Функция переключения на следующий этап
+        function nextStage() {
+            if (programBlock.style.display === "block") {
+                programBlock.style.display = "none";
+                aboutYouBlock.style.display = "block";
+                setActiveTab(2); // Устанавливаем активный класс на вторую вкладку
+            } else if (aboutYouBlock.style.display === "block") {
+                aboutYouBlock.style.display = "none";
+                addInfoBlock.style.display = "block";
+                setActiveTab(3); // Устанавливаем активный класс на третью вкладку
+            } else if (addInfoBlock.style.display === "block") {
+                addInfoBlock.style.display = "none";
+                termsConBlock.style.display = "block";
+                setActiveTab(4); // Устанавливаем активный класс на четвертую вкладку
             }
         }
 
-        function previousProgram(event) {
-            var tablinks = document.getElementsByClassName("tablinks-row-number");
-            var activeIndex = -1;
-            for (var i = 0; i < tablinks.length; i++) {
-                if (tablinks[i].classList.contains("tablinks-row-number-active")) {
-                    activeIndex = i;
-                    break;
-                }
-            }
-            if (activeIndex > 0) {
-                openProgram(event, tablinks[activeIndex - 1].id);
+        function previousStage() {
+            if (termsConBlock.style.display === "block") {
+                termsConBlock.style.display = "none";
+                addInfoBlock.style.display = "block";
+                setActiveTab(3); // Устанавливаем активный класс на третью вкладку
+            } else if (addInfoBlock.style.display === "block") {
+                addInfoBlock.style.display = "none";
+                aboutYouBlock.style.display = "block";
+                setActiveTab(2); // Устанавливаем активный класс на вторую вкладку
+            } else if (aboutYouBlock.style.display === "block") {
+                aboutYouBlock.style.display = "none";
+                programBlock.style.display = "block";
+                setActiveTab(1); // Устанавливаем активный класс на первую вкладку
             }
         }
 
-        // Вызов функции после загрузки страницы
-        window.addEventListener("load", function () {
-            document.getElementById("defaultOpen").click();
+        function setActiveTab(tabNumber) {
+            const tablinks = document.getElementsByClassName("tablinks-row-number");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            tablinks[tabNumber - 1].classList.add("active");
+        }
+
+        // Назначаем обработчики событий для кнопок "Next" и "Previous"
+        nextButtons.forEach((button) => {
+            button.addEventListener("click", nextStage);
         });
+
+        previousButtons.forEach((button) => {
+            button.addEventListener("click", previousStage);
+        });
+
     </script>
+
 
 {% endblock %}
