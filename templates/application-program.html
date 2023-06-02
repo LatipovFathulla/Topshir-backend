@@ -6,7 +6,7 @@
         .previous {
             padding: 15px 10px;
             border-radius: 6px;
-            background: deepskyblue;
+            background: #005D60;
             color: white;
             border: 0;
             outline: none;
@@ -16,32 +16,19 @@
             margin-bottom: 15px;
         }
 
-        .next1,
-        .previous1 {
-            padding: 15px 10px;
-            border-radius: 6px;
-            background: #e1161f;
-            color: white;
-            border: 0;
-            outline: none;
-            cursor: pointer;
-            width: 100px;
-            /* visibility: hidden; */
-            margin-bottom: 15px;
+        .previous.disabled {
+            display: none !important;
         }
 
-        .next1:hover {
-            color: #fff;
-        }
-
-        .previous1:hover {
-            color: #fff;
-        }
 
         .tablinks-row-number-active {
             opacity: 1 !important;
             visibility: visible;
             background-color: #005D60;
+        }
+
+        .tablinks-row-number-active.disabled {
+            display: none !important;
         }
 
         .tablinks-row-number-active:focus {
@@ -72,6 +59,7 @@
         <div class="your-programs-block" id="program">
             <div class="ng-star-inserted">
                 <h2
+                        class="title-of-block-ng"
                         class="title-of-block-ng"
                         style="font-size: 25px; line-height: 1.2"
                 >
@@ -171,7 +159,7 @@
                     Our team will contact you via this, so make sure it's correct!
                 </p>
             </div>
-            <form class="row g-3" style="max-width: 500px;" method="post">
+            <form method="post" class="row g-3" id="myForm" style="max-width: 500px;">
                 {% csrf_token %}
                 <!-- preferred communication -->
                 <div class="col-12">
@@ -198,7 +186,7 @@
                     {% endfor %}
                 </div>
                 <!-- date of birth -->
-                <button type="submit" class="btn btn-primary m-3 p-3">Next</button>
+                <button type="submit" class="btn btn-primary m-3 p-3 submit-button" id="myButton">Next</button>
             </form>
 
 
@@ -257,8 +245,11 @@
             </a>
         </div>
         <div style="text-align: center;">
-           <button class="next" id="nextButton" type="button">Next</button>
-            <button class="previous" id="previousButton" type="button">Previous</button>
+            <button class="previous disabled" id="previousButton" type="button" onclick="displayPrevious()">Previous
+            </button>
+            <button class="next tablinks-row-number-active" id="nextButton" type="button" onclick="displayNext()">Next
+            </button>
+
         </div>
     </div>
     <!-- </form> -->
@@ -271,13 +262,17 @@
             tabcontent = document.getElementsByClassName("your-programs-block");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
+                console.log(tabcontent, 'tabcontent')
             }
             tablinks = document.getElementsByClassName("tablinks-row-number");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
+                console.log(tablinks[i], 'tablinks')
             }
             document.getElementById(blockName).style.display = "block";
             evt.currentTarget.className += " active";
+
+
         }
 
 
@@ -314,7 +309,21 @@
                 termsConBlock.style.display = "block";
                 setActiveTab(4); // Устанавливаем активный класс на четвертую вкладку
             }
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
+
+
+        const myButton = document.getElementById('myButton');
+        myButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            // Your code here
+                     aboutYouBlock.style.display = "none";
+                addInfoBlock.style.display = "block";
+                setActiveTab(3); // Устанавливаем активный класс на третью вкладку
+        });
 
         function previousStage() {
             if (termsConBlock.style.display === "block") {
@@ -330,14 +339,41 @@
                 programBlock.style.display = "block";
                 setActiveTab(1); // Устанавливаем активный класс на первую вкладку
             }
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
         }
 
         function setActiveTab(tabNumber) {
             const tablinks = document.getElementsByClassName("tablinks-row-number");
+            const prev = document.getElementsByClassName("previous");
             for (let i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("active");
             }
             tablinks[tabNumber - 1].classList.add("active");
+            console.log(tabNumber, 'tabnumbers')
+            if (tabNumber == 4) {
+                nextButtons.forEach((button) => {
+                    button.classList.add("disabled");
+                });
+            }
+            if (tabNumber !== 4) {
+                nextButtons.forEach((button) => {
+                    button.classList.remove("disabled");
+                });
+            }
+            if (tabNumber == 1) {
+                previousButtons.forEach((button) => {
+                    button.classList.add("disabled");
+                });
+            }
+            if (tabNumber !== 1) {
+                previousButtons.forEach((button) => {
+                    button.classList.remove("disabled");
+                });
+            }
         }
 
         // Назначаем обработчики событий для кнопок "Next" и "Previous"

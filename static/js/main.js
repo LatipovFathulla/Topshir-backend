@@ -116,4 +116,3 @@ function myHappenAlert() {
 function  removeAlertMessage() {
   document.getElementById("success-message-alert").style = "display: none";
 }
-

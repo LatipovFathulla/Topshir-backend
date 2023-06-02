@@ -100,6 +100,7 @@ class UniversityDetailView(DetailView):
                 field.is_checked = field_name in request.POST
             else:
                 field.is_checked = False
+            print(field)
             field.save()
 
         redirect_url = self.request.path  # Перенаправляем на текущий URL
