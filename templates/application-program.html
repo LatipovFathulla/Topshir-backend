@@ -75,9 +75,9 @@
                         >{{ object.title }}
                         </strong>
                     </p>
-                    <strong class="ngcontent-name-university"
-                    >{{ object.admission }}</strong
-                    >
+                    {% for admission in object.admission.all %}
+                            <strong class="ngcontent-name-university">{{ admission.directions }}</strong>
+                    {% endfor %}
                     <a
                             href="{% url 'uni:apply' %}"
                             class="back-to-edit-link"
