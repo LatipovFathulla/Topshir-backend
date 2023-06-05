@@ -1,12 +1,16 @@
+from django.urls import reverse
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib import messages
+from django.views import View
+import requests
+from django.shortcuts import get_object_or_404
 
 from university.forms import ContactForm
 from university.models import UniversityModel, CountryModel, StudyLevelModel, AdmissionsModel, BlogModel, \
-    UniversityInputFieldModel
+    UniversityInputFieldModel, Payment
 
 
 class ApplyUniversityView(ListView):
@@ -124,9 +128,120 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact_instance = form.save()   # Сохраняем данные формы в базе данных
+            contact_instance = form.save()  # Сохраняем данные формы в базе данных
             messages.success(request, 'Успешно отправлено!')  # Добавляем сообщение об успешной отправке
             return redirect('pages:contacts')  # Перенаправляем на страницу контактов после успешной отправки
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+
+def callback(request):
+    # Получение данных о платеже из запроса
+    payment_id = request.GET.get('payment_id')
+    status = request.GET.get('status')
+    amount = request.GET.get('amount')
+
+    # Получение соответствующего платежа из базы данных
+    try:
+        payment = Payment.objects.get(payment_id=payment_id)
+    except Payment.DoesNotExist:
+        return HttpResponse("Ошибка: Неверный идентификатор платежа.")
+
+    # Проверка статуса платежа и генерация сообщения
+    if status == "success":
+        message = f"Платеж успешно завершен! Сумма: {amount} USD"
+        context = {
+            'university': payment.university,
+            'amount': payment.amount
+        }
+        return render(request, 'callback-success.html', context)
+    else:
+        message = "Ошибка при обработке платежа."
+
+    # Вывод информации о платеже и сообщения
+    response = f"Детали платежа:\nУниверситет: {payment.university}\nСумма: {payment.amount} USD\n\n{message}"
+    return HttpResponse(response)
+
+
+
+def callback_error(request):
+    # Получение данных о платеже из запроса
+    payment_id = request.GET.get('payment_id')
+
+    # Получение соответствующего платежа из базы данных
+    try:
+        payment = Payment.objects.get(payment_id=payment_id)
+    except Payment.DoesNotExist:
+        return HttpResponse("Ошибка: Неверный идентификатор платежа.")
+
+    # Генерация сообщения об ошибке
+    message = "Ошибка при обработке платежа."
+
+    # Вывод информации о платеже и сообщения об ошибке
+    context = {
+        'university': payment.university,
+        'amount': payment.amount,
+        'message': message
+    }
+    return render(request, 'callback-error.html', context)
+
+
+class PurchaseUniversityView(View):
+    def get(self, request, slug):
+        university = get_object_or_404(UniversityModel, slug=slug)
+        context = {'university': university}
+        return render(request, 'checkout.html', context)
+
+    def post(self, request, slug):
+        university = get_object_or_404(UniversityModel, slug=slug)
+        amount = request.POST.get('amount')
+
+        # Здесь вставьте ваш Sandbox или Production API-ключ и секрет
+        api_key = "ECF9746CEFB34166877FC20A32E856E6"
+        api_secret = "FC49C3923A14443A8A1969EB391BE19B"
+
+        url = "https://payze.io/api/v1"
+
+        payload = {
+            "method": "justPay",
+            "apiKey": api_key,
+            "apiSecret": api_secret,
+            "data": {
+                "amount": amount,
+                "currency": "USD",
+                "callback": request.build_absolute_uri(reverse('uni:callback')),
+                "callbackError": request.build_absolute_uri(reverse('uni:callback_error')),
+                "preauthorize": False,
+                "lang": "RU",
+                "hookUrlV2": "https://corp.com/payze_hook?authorization_token=token",
+                "info": {
+                    "description": f"Payment for university: {university.title}",
+                    "image": "https://payze.io/assets/images/logo_v2.svg",
+                    "name": "University Payment"
+                },
+                "hookRefund": False
+            }
+        }
+        headers = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        response = requests.post(url, json=payload, headers=headers)
+        if response.status_code == 200:
+            payment_id = response.json().get('data', {}).get('paymentId')
+
+            # Сохранение информации о платеже в базе данных
+            payment = Payment.objects.create(
+                university=university,
+                amount=amount,
+                payment_id=payment_id
+            )
+
+            # Перенаправление пользователя на страницу оплаты
+            return HttpResponseRedirect(response.json().get('response', {}).get('transactionUrl'))
+        else:
+            # Обработка ошибки при создании платежа
+            error_message = response.json().get('message', 'Payment creation failed.')
+            return HttpResponseServerError('Payment creation failed.')

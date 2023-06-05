@@ -197,3 +197,17 @@ class ContactModel(models.Model):
     class Meta:
         verbose_name = _('Contact')
         verbose_name_plural = _('Contacts')
+
+
+class Payment(models.Model):
+    university = models.ForeignKey(UniversityModel, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_id = models.AutoField(primary_key=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("created_at"))
+
+    def __str__(self):
+        return f"Payment for university: {self.university.title}"
+
+    class Meta:
+        verbose_name = _("Paymet")
+        verbose_name_plural = _("Payments")
