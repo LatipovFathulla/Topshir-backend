@@ -146,7 +146,7 @@ def callback(request):
     try:
         payment = Payment.objects.get(payment_id=payment_id)
     except Payment.DoesNotExist:
-        return HttpResponse("Ошибка: Неверный идентификатор платежа.")
+        return render(request, 'callback-success.html')
 
     # Проверка статуса платежа и генерация сообщения
     if status == "success":
@@ -173,7 +173,7 @@ def callback_error(request):
     try:
         payment = Payment.objects.get(payment_id=payment_id)
     except Payment.DoesNotExist:
-        return HttpResponse("Ошибка: Неверный идентификатор платежа.")
+        return render(request, 'callback-error.html')
 
     # Генерация сообщения об ошибке
     message = "Ошибка при обработке платежа."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 15:05+0500\n"
+"POT-Creation-Date: 2023-06-06 20:03+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,108 +16,182 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: topshir/settings.py:108
-msgid "English"
+#: templates/callback-error.html:6
+msgid "Payment Error"
 msgstr ""
 
-#: topshir/settings.py:109
-msgid "Russian"
+#: templates/callback-error.html:7
+msgid "An error occurred during payment processing."
 msgstr ""
 
-#: topshir/settings.py:110
-msgid "O'zbek"
+#: templates/callback-success.html:5
+msgid "Payment Successfully"
 msgstr ""
 
-#: university/models.py:8 university/models.py:50
-msgid "title"
-msgstr ""
-
-#: university/models.py:9
-msgid "image"
-msgstr ""
-
-#: university/models.py:10 university/models.py:23 university/models.py:38
-#: university/models.py:58
-msgid "created_at"
-msgstr ""
-
-#: university/models.py:11 university/models.py:24 university/models.py:39
-#: university/models.py:59
-msgid "updated_at"
-msgstr ""
-
-#: university/models.py:17
-msgid "Country"
-msgstr ""
-
-#: university/models.py:18
-msgid "Countries"
-msgstr ""
-
-#: university/models.py:22 university/models.py:55
-msgid "level"
-msgstr ""
-
-#: university/models.py:30
-msgid "Study Level"
-msgstr ""
-
-#: university/models.py:31
-msgid "Study Levels"
-msgstr ""
-
-#: university/models.py:35
-msgid "start_date"
-msgstr ""
-
-#: university/models.py:36
-msgid "end_date"
-msgstr ""
-
-#: university/models.py:37
-msgid "directions"
-msgstr ""
-
-#: university/models.py:45
-msgid "Admission"
-msgstr ""
-
-#: university/models.py:46
-msgid "Admissions"
-msgstr ""
-
-#: university/models.py:51
-msgid "slug"
-msgstr ""
-
-#: university/models.py:52
-msgid "logo"
-msgstr ""
-
-#: university/models.py:53
-msgid "descriptions"
-msgstr ""
-
-#: university/models.py:54
-msgid "country"
-msgstr ""
-
-#: university/models.py:56
-msgid "admission"
-msgstr ""
-
-#: university/models.py:57
-msgid "Terms and Conditions"
-msgstr ""
-
-#: university/models.py:70
+#: templates/callback-success.html:6 university/models.py:71
 msgid "University"
 msgstr ""
 
-#: university/models.py:71
+#: templates/callback-success.html:7
+msgid "Amount"
+msgstr ""
+
+#: templates/callback-success.html:8
+msgid "Payment was processed successfully"
+msgstr ""
+
+#: templates/callback-success.html:9
+msgid "Home"
+msgstr ""
+
+#: topshir/settings.py:120
+msgid "English"
+msgstr ""
+
+#: topshir/settings.py:121
+msgid "Russian"
+msgstr ""
+
+#: topshir/settings.py:122
+msgid "O'zbek"
+msgstr ""
+
+#: university/models.py:9 university/models.py:51 university/models.py:97
+msgid "title"
+msgstr ""
+
+#: university/models.py:10 university/models.py:99
+msgid "image"
+msgstr ""
+
+#: university/models.py:11 university/models.py:24 university/models.py:39
+#: university/models.py:59 university/models.py:85 university/models.py:102
+#: university/models.py:191 university/models.py:206
+msgid "created_at"
+msgstr ""
+
+#: university/models.py:12 university/models.py:25 university/models.py:40
+#: university/models.py:60 university/models.py:86 university/models.py:103
+#: university/models.py:192
+msgid "updated_at"
+msgstr ""
+
+#: university/models.py:18
+msgid "Country"
+msgstr ""
+
+#: university/models.py:19
+msgid "Countries"
+msgstr ""
+
+#: university/models.py:23 university/models.py:56
+msgid "level"
+msgstr ""
+
+#: university/models.py:31
+msgid "Study Level"
+msgstr ""
+
+#: university/models.py:32
+msgid "Study Levels"
+msgstr ""
+
+#: university/models.py:36
+msgid "start_date"
+msgstr ""
+
+#: university/models.py:37
+msgid "end_date"
+msgstr ""
+
+#: university/models.py:38
+msgid "directions"
+msgstr ""
+
+#: university/models.py:46
+msgid "Admission"
+msgstr ""
+
+#: university/models.py:47
+msgid "Admissions"
+msgstr ""
+
+#: university/models.py:52 university/models.py:98
+msgid "slug"
+msgstr ""
+
+#: university/models.py:53
+msgid "logo"
+msgstr ""
+
+#: university/models.py:54
+msgid "descriptions"
+msgstr ""
+
+#: university/models.py:55
+msgid "country"
+msgstr ""
+
+#: university/models.py:57
+msgid "admission"
+msgstr ""
+
+#: university/models.py:58
+msgid "Terms and Conditions"
+msgstr ""
+
+#: university/models.py:72
 msgid "Universities"
+msgstr ""
+
+#: university/models.py:81
+msgid "name"
+msgstr ""
+
+#: university/models.py:83
+msgid "input type"
+msgstr ""
+
+#: university/models.py:92
+msgid "University input"
+msgstr ""
+
+#: university/models.py:93
+msgid "University inputs"
+msgstr ""
+
+#: university/models.py:100
+msgid "Short description"
+msgstr ""
+
+#: university/models.py:101
+msgid "Long description"
+msgstr ""
+
+#: university/models.py:120
+msgid "Blog"
+msgstr ""
+
+#: university/models.py:121
+msgid "Blogs"
+msgstr ""
+
+#: university/models.py:198
+msgid "Contact"
+msgstr ""
+
+#: university/models.py:199
+msgid "Contacts"
+msgstr ""
+
+#: university/models.py:212
+msgid "Paymet"
+msgstr ""
+
+#: university/models.py:213
+msgid "Payments"
 msgstr ""

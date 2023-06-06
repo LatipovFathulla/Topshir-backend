@@ -171,7 +171,7 @@
     {% csrf_token %}
     <input type="hidden" name="university" value="{{ university.title }}">
     <input type="number" name="amount" required>
-    <button type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 
 {% endblock %}
