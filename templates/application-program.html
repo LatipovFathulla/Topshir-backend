@@ -169,6 +169,7 @@
                         {% if input_field.input_type == 'checkbox' %}
                             <!-- Checkbox field -->
                             <div class="form-check">
+                            <h3>{{ input_field.name }}</h3>
                                 <input class="form-check-input" type="checkbox" name="{{ input_field.name }}"
                                        id="{{ input_field.name }}" {% if input_field.is_checked %}checked{% endif %}>
                                 <label class="form-check-label"
@@ -241,7 +242,7 @@
                 </p>
             </div>
             <a href="{% url 'uni:purchase' slug=university.slug %}" target="_blank">
-                <button class="btn btn-primary">Purchase</button>
+                <button class="next tablinks-row-number-active">Purchase</button>
             </a>
         </div>
         <div style="text-align: center;">

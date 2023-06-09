@@ -52,6 +52,7 @@ class UniversityModel(models.Model):
     slug = models.SlugField(max_length=255, unique=True, verbose_name=_('slug'))
     logo = models.FileField(upload_to='university', verbose_name=_('logo'))
     descriptions = models.TextField(verbose_name=_('descriptions'))
+    price = models.IntegerField(max_length=50, verbose_name=_('price'), null=True)
     country = models.ForeignKey(CountryModel, on_delete=models.CASCADE, verbose_name=_('country'))
     level = models.ForeignKey(StudyLevelModel, on_delete=models.CASCADE, verbose_name=_('level'))
     admission = models.ManyToManyField(AdmissionsModel, verbose_name=_('admission'))
@@ -201,6 +202,16 @@ class ContactModel(models.Model):
 
 class Payment(models.Model):
     university = models.ForeignKey(UniversityModel, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=90, verbose_name=_('first_name'), null=True)
+    last_name = models.CharField(max_length=90, verbose_name=_('last_name'), null=True)
+    email = models.EmailField(max_length=150, verbose_name=_('email'), null=True)
+    address = models.CharField(max_length=300, verbose_name=_('address'), null=True)
+    phone = models.CharField(max_length=30, verbose_name=_('phone'), null=True)
+    MALES = (
+        ('male', 'male'),
+        ('female', 'female'),
+    )
+    male = models.CharField(max_length=30, choices=MALES, null=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     payment_id = models.AutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("created_at"))
