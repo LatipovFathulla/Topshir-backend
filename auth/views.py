@@ -1,11 +1,16 @@
-# views.py
 import random
+import requests
+from django.contrib.auth import logout, login, authenticate
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.views.generic import ListView, TemplateView
+from django.views.generic import TemplateView
+
+from auth.eskiz import SendSmsApiWithEskiz, SUCCESS, FAILED, INVALID_NUMBER, MESSAGE_IS_EMPTY
 from university.models import UniversityModel
-from twilio.rest import Client
+
+ESKIZ_API_URL = 'http://notify.eskiz.uz/api/message/sms/send'
+ESKIZ_EMAIL = '21oracle.vb@gmail.com'
+ESKIZ_PASSWORD = 'q9x08xuEd4COygnorA3EHH8bmMCCE6WVWmYiYbXr'
 
 
 def generate_verification_code():
@@ -14,20 +19,27 @@ def generate_verification_code():
 
 
 def send_verification_code(phone_number, verification_code):
-    # Ваши данные учетной записи Twilio
-    account_sid = 'AC39dfd8ebcbfa83fb47416c784187dfc5'
-    auth_token = 'b1306e46326087eb6b270bbc1debf32c'
-    twilio_phone_number = '+13158722352'  # Ваш номер Twilio
+    message = f'Ваш код подтверждения: {verification_code}'
 
-    # Создание клиента Twilio
-    client = Client(account_sid, auth_token)
+    eskiz_api = SendSmsApiWithEskiz(message, phone_number, email=ESKIZ_EMAIL, password=ESKIZ_PASSWORD)
+    result = eskiz_api.send()
 
-    # Отправка SMS-сообщения с кодом подтверждения
-    client.messages.create(
-        body=f'Ваш код подтверждения: {verification_code}',  # Замените на ваш код подтверждения
-        from_=twilio_phone_number,
-        to=phone_number
-    )
+    if result == SUCCESS:
+        # SMS успешно отправлена
+        # Дополнительный код обработки в случае успешной отправки
+        print("SMS успешно отправлена")
+    elif result == FAILED:
+        # Обработка ошибки при отправке SMS
+        # Дополнительный код обработки в случае ошибки
+        print("Ошибка при отправке SMS")
+    elif result == INVALID_NUMBER:
+        # Обработка ошибки неверного номера телефона
+        # Дополнительный код обработки в случае неверного номера телефона
+        print("Неверный номер телефона")
+    elif result == MESSAGE_IS_EMPTY:
+        # Обработка ошибки пустого сообщения
+        # Дополнительный код обработки в случае пустого сообщения
+        print("Пустое сообщение")
 
 
 def register(request):
@@ -85,8 +97,6 @@ def confirmation(request):
         error_message = ''
 
     return render(request, 'confirmation.html', {'error_message': error_message})
-
-
 
 def login_view(request):
     if request.method == 'POST':
