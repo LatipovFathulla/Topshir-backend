@@ -27,19 +27,19 @@ def send_verification_code(phone_number, verification_code):
     if result == SUCCESS:
         # SMS успешно отправлена
         # Дополнительный код обработки в случае успешной отправки
-        print("SMS успешно отправлена")
+        print("Sms send succsessfully")
     elif result == FAILED:
         # Обработка ошибки при отправке SMS
         # Дополнительный код обработки в случае ошибки
-        print("Ошибка при отправке SMS")
+        print("Failed ")
     elif result == INVALID_NUMBER:
         # Обработка ошибки неверного номера телефона
         # Дополнительный код обработки в случае неверного номера телефона
-        print("Неверный номер телефона")
+        print("Wrong number ")
     elif result == MESSAGE_IS_EMPTY:
         # Обработка ошибки пустого сообщения
         # Дополнительный код обработки в случае пустого сообщения
-        print("Пустое сообщение")
+        print("Empty sms")
 
 
 def register(request):
